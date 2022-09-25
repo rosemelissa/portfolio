@@ -8,7 +8,6 @@ let myCamera: p5.Camera;
 const myPosition: IPosition = {x: 0, y: 0, z: 0, direction: 0};
 let cameraChoice: 'chase'|'far'|'back' = 'back';
 let instructions: p5.Graphics;
-// const textBoxes: ITextBlock[] = []
 const textBlocks: ITextBlock[] = [];
 
 
@@ -30,11 +29,6 @@ function sketch(p: p5) {
         textBlocks.push({graphics: p.createGraphics(200, 200), textBox})
     }
 }
-    // textBoxes.push({graphics: p.createGraphics(200, 200),
-    //     position: {x: 0, y: 0, z: 0, direction: 0},
-    //     color: {v1: 0, v2: 0, v3: 0},
-    //     message: 'test'})
-    // }
 
     p.draw = function() {
         p.background(200);
@@ -53,31 +47,10 @@ function sketch(p: p5) {
     p.sphere(2);
     p.pop();
     moveSelf();
-    
-        keyPressed();
-        // your draw code here
-        // drawInstructions();
-        for (const item of textBlocks) {
-            drawText(item);
-        }
+    keyPressed();
+    for (const item of textBlocks) {
+        drawText(item);
     }
-
-    function drawInstructions(){
-        p.push();
-        p.translate(20, -50, 0);
-        p.rotateY(-1*p.PI/2);
-        p.fill(0, 0, 0)
-        instructions.background(255);
-        instructions.text('hello!', 0, 100);
-        //pass image as texture
-        p.texture(instructions);
-        p.plane(50);
-        p.pop();
-        // p.push();
-        // p.fill(204, 102, 0);
-        // p.translate(20, 0, 0);
-        // p.text('Instructions', 0, 0);
-        // p.pop();
     }
 
     function drawText(textBlock: ITextBlock) {
