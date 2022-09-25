@@ -30,8 +30,9 @@ function sketch(p: p5) {
     //optional
     //Set up a non-default camera position and facing.  You *can* delete these and accept the defaults
     myCamera = p.createCamera();
-    myCamera.setPosition(100, -200, 400);
-    myCamera.lookAt(0, 0, 0);
+    moveCamera();
+    // myCamera.setPosition(100, -200, 400);
+    // myCamera.lookAt(0, 0, 0);
     instructions = p.createGraphics(200, 200);
     instructions.textSize(75);
     portal = p.createGraphics(100, 100);
