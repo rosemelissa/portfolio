@@ -13,7 +13,7 @@ let portal: p5.Graphics;
 
 
 interface P5ComponentProps {
-  setPage: React.Dispatch<React.SetStateAction<"3d-home" | "static-home" | "todo-app" | "restaurant" | "playlist-converter" | "pokemon-top-trumps">>;
+  setPage: React.Dispatch<React.SetStateAction<"3d-home" | "2d-home" | "todo-app" | "restaurant" | "playlist-converter" | "pokemon-top-trumps">>;
 }
 
 function P5Component({setPage}: P5ComponentProps): JSX.Element {
