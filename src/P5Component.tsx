@@ -8,6 +8,7 @@ const myPosition: IPosition = { x: 0, y: 0, z: 0, direction: 0 };
 let cameraChoice: "chase" | "far" | "back" = "back";
 let instructions: p5.Graphics;
 const textBlocks: ITextBlock[] = [];
+const portals: {name: 'todo-app'|'restaurant'|'playlist-converter'|'pokemon-top-trumps'; x: number; z: number}[] = [{name: 'todo-app', x: 800, z: -300}, {name: 'restaurant', x: 800, z: -100}, {name: 'playlist-converter', x: 800, z: 100}, {name: 'pokemon-top-trumps', x: 800, z: 300}]
 let portal: p5.Graphics;
 
 
@@ -63,16 +64,24 @@ function sketch(p: p5) {
     for (const item of textBlocks) {
       drawText(item);
     }
-    drawPortal();
+    drawPortals();
     checkForRedirects();
     console.log(myPosition)
   };
 
+  function drawPortals() {
+    for (const portal of portals) {
+      drawPortal(portal.x, portal.z)
+    }
+  }
+
   function checkForRedirects() {
-    if (myPosition.x>80 && myPosition.x<120 && myPosition.z>80 && myPosition.z<120) {
-      setPage('todo-app');
-      myPosition.x = 50;
-      myPosition.z = 80;
+    for (const portal of portals) {
+      if (myPosition.x>portal.x-30 && myPosition.x<portal.x+30 && myPosition.z>portal.z-30 && myPosition.z<portal.z+30) {
+        setPage(portal.name);
+        myPosition.x -= 50;
+        myPosition.z -= 50;
+      }
     }
   }
 
@@ -95,9 +104,9 @@ function sketch(p: p5) {
     p.pop();
   }
 
-  function drawPortal() {
+  function drawPortal(x: number, z: number) {
     p.push();
-    p.translate(100, 0, 100);
+    p.translate(x, 0, z);
     p.rotateX(p.PI / -2);
     // portal.background(138,43,226);
     // p.fill(200, 200, 200);
