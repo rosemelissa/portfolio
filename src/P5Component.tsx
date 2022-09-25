@@ -8,6 +8,7 @@ const myPosition: IPosition = { x: 0, y: 0, z: 0, direction: 0 };
 let cameraChoice: "chase" | "far" | "back" = "back";
 let instructions: p5.Graphics;
 const textBlocks: ITextBlock[] = [];
+let portal: p5.Graphics;
 
 function sketch(p: p5) {
   // p is a reference to the p5 instance this sketch is attached to
@@ -23,6 +24,7 @@ function sketch(p: p5) {
     myCamera.lookAt(0, 0, 0);
     instructions = p.createGraphics(200, 200);
     instructions.textSize(75);
+    portal = p.createGraphics(100, 100);
     for (const textBox of textBoxes) {
       textBlocks.push({
         graphics: p.createGraphics(textBox.plane.width, textBox.plane.height),
@@ -52,6 +54,7 @@ function sketch(p: p5) {
     for (const item of textBlocks) {
       drawText(item);
     }
+    drawPortal();
   };
 
   function drawText(textBlock: ITextBlock) {
@@ -70,6 +73,24 @@ function sketch(p: p5) {
     graphics.textAlign(p.CENTER, p.CENTER);
     p.texture(graphics);
     p.plane(width, height, 2, 2);
+    p.pop();
+  }
+
+  function drawPortal() {
+    p.push();
+    p.translate(0, 0, 0);
+    p.rotateX(p.PI / -2);
+    portal.background(200, 200, 200);
+    p.fill(200, 200, 200);
+    portal.circle(50, 50, 100);
+    for (let i = 0; i < 20; i++) {
+        p.noStroke();
+        p.fill(255, 255, 255)
+        portal.circle(p.random(0, 100), p.random(0, 100), 5)
+    }
+    // portal.background(100);
+    p.texture(portal);
+    p.plane(100, 100, 2, 2);
     p.pop();
   }
 
