@@ -1,31 +1,15 @@
 import p5 from 'p5'
 import { useEffect, useRef } from 'react';
+import { IPosition, ITextBlock } from './interfaces';
+import {textBoxes} from './textBoxes'
 
-interface IPosition {
-    x: number;
-    y: number;
-    z: number;
-    direction: number;
-}
-
-interface IColor {
-    v1: number;
-    v2: number;
-    v3: number;
-}
-
-interface ITextBlock {
-    graphics: p5.Graphics;
-    position: IPosition;
-    color: IColor;
-    message: string;
-}
 
 let myCamera: p5.Camera;
 const myPosition: IPosition = {x: 0, y: 0, z: 0, direction: 0};
 let cameraChoice: 'chase'|'far'|'back' = 'back';
 let instructions: p5.Graphics;
-const textBoxes: ITextBlock[] = []
+// const textBoxes: ITextBlock[] = []
+const textBlocks: ITextBlock[] = [];
 
 
 function sketch(p: p5) {
@@ -42,11 +26,15 @@ function sketch(p: p5) {
 	myCamera.lookAt(0, 0, 0);
     instructions = p.createGraphics(200, 200);
     instructions.textSize(75);
-    textBoxes.push({graphics: p.createGraphics(200, 200),
-        position: {x: 0, y: 0, z: 0, direction: 0},
-        color: {v1: 0, v2: 0, v3: 0},
-        message: 'test'})
+    for (const textBox of textBoxes) {
+        textBlocks.push({graphics: p.createGraphics(200, 200), textBox})
     }
+}
+    // textBoxes.push({graphics: p.createGraphics(200, 200),
+    //     position: {x: 0, y: 0, z: 0, direction: 0},
+    //     color: {v1: 0, v2: 0, v3: 0},
+    //     message: 'test'})
+    // }
 
     p.draw = function() {
         p.background(200);
@@ -69,7 +57,7 @@ function sketch(p: p5) {
         keyPressed();
         // your draw code here
         // drawInstructions();
-        for (const item of textBoxes) {
+        for (const item of textBlocks) {
             drawText(item);
         }
     }
@@ -93,7 +81,8 @@ function sketch(p: p5) {
     }
 
     function drawText(textBlock: ITextBlock) {
-        const {graphics, position, color, message} = textBlock;
+        const {graphics, textBox} = textBlock;
+        const {position, color, message} = textBox;
         const {x, y, z, direction} = position;
         const {v1, v2, v3} = color;
         graphics.textSize(75);
