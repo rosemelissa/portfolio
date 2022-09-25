@@ -9,6 +9,7 @@ let cameraChoice: "chase" | "far" | "back" = "back";
 let instructions: p5.Graphics;
 const textBlocks: ITextBlock[] = [];
 const portals: {name: 'todo-app'|'restaurant'|'playlist-converter'|'pokemon-top-trumps'; x: number; z: number}[] = [{name: 'todo-app', x: 800, z: -300}, {name: 'restaurant', x: 800, z: -100}, {name: 'playlist-converter', x: 800, z: 100}, {name: 'pokemon-top-trumps', x: 800, z: 300}]
+const links: {name: string; url: string, x: number, z: number}[] = [{name: 'github', url:'https://github.com/rosemelissa', x: 200, z: 200}]
 let portal: p5.Graphics;
 
 
@@ -74,12 +75,22 @@ function sketch(p: p5) {
     for (const portal of portals) {
       drawPortal(portal.x, portal.z)
     }
+    for (const link of links) {
+      drawPortal(link.x, link.z)
+    }
   }
 
   function checkForRedirects() {
     for (const portal of portals) {
       if (myPosition.x>portal.x-30 && myPosition.x<portal.x+30 && myPosition.z>portal.z-30 && myPosition.z<portal.z+30) {
         setPage(portal.name);
+        myPosition.x -= 50;
+        myPosition.z -= 50;
+      }
+    }
+    for (const link of links) {
+      if (myPosition.x>link.x-30 && myPosition.x<link.x+30 && myPosition.z>link.z-30 && myPosition.z<link.z+30) {
+        window.open(link.url);
         myPosition.x -= 50;
         myPosition.z -= 50;
       }
