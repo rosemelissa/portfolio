@@ -3,14 +3,14 @@ import { useEffect, useRef } from 'react';
 
 let myCamera: p5.Camera;
 const myPosition = {x: 0, y: 0, z: 0, direction: 0};
-let cameraChoice: 'chase'|'far' = 'chase';
+let cameraChoice: 'chase'|'far'|'back' = 'back';
 let instructions: p5.Graphics;
 
 
 function sketch(p: p5) {
     // p is a reference to the p5 instance this sketch is attached to
     p.setup = function() {
-        p.createCanvas(400, 400, p.WEBGL);
+        p.createCanvas(p.windowWidth*0.8, p.windowHeight*0.8, p.WEBGL);
         p.background(200);
         p.debugMode(500, 10); // Add a grid and an axes guide.  RGB indicate XYZ, respectively (so Red is X axis. Direction of the stick outward indicates +ve on that axis.)
 
@@ -40,7 +40,7 @@ function sketch(p: p5) {
     p.sphere(2);
     p.pop();
     moveSelf();
-    moveCamera();
+    
         keyPressed();
         // your draw code here
         drawInstructions();
@@ -48,14 +48,14 @@ function sketch(p: p5) {
 
     function drawInstructions(){
         p.push();
-        p.translate(0, 0, 0);
+        p.translate(0, -50, 0);
         p.fill(0, 0, 0)
         instructions.background(255);
-  instructions.text('hello!', 0, 100);
-  //pass image as texture
-  p.texture(instructions);
-  p.plane(50);
-  p.pop();
+        instructions.text('hello!', 0, 100);
+        //pass image as texture
+        p.texture(instructions);
+        p.plane(50);
+        p.pop();
         // p.push();
         // p.fill(204, 102, 0);
         // p.translate(20, 0, 0);
@@ -66,19 +66,23 @@ function sketch(p: p5) {
     function moveSelf(){
         if (p.keyIsDown(p.RIGHT_ARROW)) {
             myPosition.direction += 0.1;
+            moveCamera();
                 // myCamera.lookAt(myPosition.x, 0, myPosition.z);
         }	
         if (p.keyIsDown(p.LEFT_ARROW)) {
             myPosition.direction -= 0.1;
+            moveCamera();
             // myCamera.lookAt(myPosition.x, 0, myPosition.z);
         }	
         if (p.keyIsDown(p.UP_ARROW)) {
             myPosition.x += 3*p.cos(myPosition.direction);
             myPosition.z += 3*p.sin(myPosition.direction);
+            moveCamera();
         }	
         if (p.keyIsDown(p.DOWN_ARROW)) {
             myPosition.x -= 3*p.cos(myPosition.direction);
             myPosition.z -= 3*p.sin(myPosition.direction);
+            moveCamera();
         }	
         }
 
@@ -89,6 +93,9 @@ function sketch(p: p5) {
             } else if (cameraChoice === 'far') {
                     myCamera.setPosition(myPosition.x, -400, myPosition.z);
                     myCamera.lookAt(myPosition.x - 50*p.cos(myPosition.direction), myPosition.y, myPosition.z - 50*p.sin(myPosition.direction));
+            } else if (cameraChoice === 'back') {
+                myCamera.setPosition(myPosition.x - 200*p.cos(myPosition.direction), -200, myPosition.z - 200*p.sin(myPosition.direction));
+                myCamera.lookAt(myPosition.x, -50, myPosition.z);	
             }
         }
         
