@@ -1,5 +1,6 @@
 import { useState } from "react";
 import TodoApp from "./components/TodoApp";
+import Home2D from "./Home2D";
 import P5Component from "./P5Component";
 import { greet } from "./utils/greet";
 
@@ -15,7 +16,7 @@ function App(): JSX.Element {
       {page==='home' && mode==='3D' &&
       <P5Component setPage={setPage}/>}
       {page==='todo-app' && <TodoApp mode={mode} setPage={setPage}/>}
-      {page==='home' && mode==='2D' && <h1>2d</h1>}
+      {page==='home' && mode==='2D' && <Home2D setPage={setPage} />}
     </>
   );
 }
