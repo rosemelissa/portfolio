@@ -31,40 +31,40 @@ export const textBoxes: ITextBox[] = [
     },
   },
   {
-    position: { x: 600, y: -50, z: -300, direction: 0 },
+    position: { x: 800, y: -50, z: -300, direction: 0 },
     color: { v1: 0, v2: 0, v3: 0 },
     message: "Todo list",
-    textSize: 30,
+    textSize: 10,
     plane: {
       width: 150,
       height: 50,
     },
   },
   {
-    position: { x: 600, y: -50, z: -100, direction: 0 },
+    position: { x: 800, y: -50, z: -100, direction: 0 },
     color: { v1: 0, v2: 0, v3: 0 },
     message: "Restaurant booking system",
-    textSize: 30,
+    textSize: 10,
     plane: {
       width: 150,
       height: 50,
     },
   },
   {
-    position: { x: 600, y: -50, z: 100, direction: 0 },
+    position: { x: 800, y: -50, z: 100, direction: 0 },
     color: { v1: 0, v2: 0, v3: 0 },
-    message: "YouTube-Spotify playlist converter",
-    textSize: 30,
+    message: "YouTube-to-Spotify playlist converter",
+    textSize: 10,
     plane: {
       width: 150,
       height: 50,
     },
   },
   {
-    position: { x: 600, y: -50, z: 300, direction: 0 },
+    position: { x: 800, y: -50, z: 300, direction: 0 },
     color: { v1: 0, v2: 0, v3: 0 },
     message: "Pokemon Top Trumps",
-    textSize: 30,
+    textSize: 10,
     plane: {
       width: 150,
       height: 50,
@@ -75,6 +75,46 @@ export const textBoxes: ITextBox[] = [
     color: { v1: 0, v2: 0, v3: 0 },
     message: "Links",
     textSize: 30,
+    plane: {
+      width: 150,
+      height: 50,
+    },
+  },
+  {
+    position: { x: 300, y: -50, z: 400, direction: Math.PI / -2 },
+    color: { v1: 0, v2: 0, v3: 0 },
+    message: "GitHub",
+    textSize: 10,
+    plane: {
+      width: 100,
+      height: 50,
+    },
+  },
+  {
+    position: { x: 190, y: -50, z: 400, direction: Math.PI / -2 },
+    color: { v1: 0, v2: 0, v3: 0 },
+    message: "LinkedIn",
+    textSize: 10,
+    plane: {
+      width: 100,
+      height: 50,
+    },
+  },
+  {
+    position: { x: 80, y: -50, z: 400, direction: Math.PI / -2 },
+    color: { v1: 0, v2: 0, v3: 0 },
+    message: "CV",
+    textSize: 10,
+    plane: {
+      width: 100,
+      height: 50,
+    },
+  },
+  {
+    position: { x: -55, y: -50, z: 400, direction: Math.PI / -2 },
+    color: { v1: 0, v2: 0, v3: 0 },
+    message: "Creative Coding",
+    textSize: 10,
     plane: {
       width: 150,
       height: 50,
