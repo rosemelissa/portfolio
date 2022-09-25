@@ -40,7 +40,7 @@ function sketch(p: p5) {
     //Add some lights (every frame!) ------------------------------------------------
     //Add directional light to surfaces which face it
     //Params: (color, directionVector)
-    p.directionalLight(p.color(150, 100, 0), p.createVector(-0.8, -0.5, -0.2));
+    p.directionalLight(p.color(255, 255, 255), p.createVector(-0.8, -0.5, -0.2));
 
     //Add a little light evenly to ALL surfaces.  Not too much or we'll see no shadow
     p.ambientLight(180, 150, 150);
@@ -80,12 +80,18 @@ function sketch(p: p5) {
     p.push();
     p.translate(0, 0, 0);
     p.rotateX(p.PI / -2);
-    portal.background(200, 200, 200);
-    p.fill(200, 200, 200);
+    // portal.background(138,43,226);
+    // p.fill(200, 200, 200);
+    portal.fill(138,43,226)
     portal.circle(50, 50, 100);
+    for (let i = 100; i >= 10; i-=10) {
+        portal.noStroke();
+        portal.fill(0, 0, 0, 50)
+        portal.circle(50, 50, i)
+    }
     for (let i = 0; i < 20; i++) {
-        p.noStroke();
-        p.fill(255, 255, 255)
+        portal.noStroke();
+        portal.fill(247, 245, 77)
         portal.circle(p.random(0, 100), p.random(0, 100), 5)
     }
     // portal.background(100);
