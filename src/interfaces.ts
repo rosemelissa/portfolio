@@ -26,5 +26,5 @@ export interface ITextBox {
   plane: {
     width: number;
     height: number;
-  }
+  };
 }

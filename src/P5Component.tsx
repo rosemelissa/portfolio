@@ -24,7 +24,10 @@ function sketch(p: p5) {
     instructions = p.createGraphics(200, 200);
     instructions.textSize(75);
     for (const textBox of textBoxes) {
-      textBlocks.push({ graphics: p.createGraphics(textBox.plane.width, textBox.plane.height), textBox });
+      textBlocks.push({
+        graphics: p.createGraphics(textBox.plane.width, textBox.plane.height),
+        textBox,
+      });
     }
   };
 
@@ -56,7 +59,7 @@ function sketch(p: p5) {
     const { position, color, message, textSize, plane } = textBox;
     const { x, y, z, direction } = position;
     const { v1, v2, v3 } = color;
-    const {width, height} = plane;
+    const { width, height } = plane;
     graphics.textSize(textSize);
     p.push();
     p.translate(x, y, z);
@@ -64,7 +67,7 @@ function sketch(p: p5) {
     p.fill(v1, v2, v3);
     graphics.background(255);
     graphics.text(message, 0, 0, width, height);
-    graphics.textAlign(p.CENTER, p.CENTER)
+    graphics.textAlign(p.CENTER, p.CENTER);
     p.texture(graphics);
     p.plane(width, height);
     p.pop();
