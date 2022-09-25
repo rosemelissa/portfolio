@@ -69,7 +69,7 @@ function sketch(p: p5) {
     graphics.text(message, 0, 0, width, height);
     graphics.textAlign(p.CENTER, p.CENTER);
     p.texture(graphics);
-    p.plane(width, height);
+    p.plane(width, height, 2, 2);
     p.pop();
   }
 
