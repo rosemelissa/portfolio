@@ -81,6 +81,46 @@ export const textBoxes: ITextBox[] = [
     },
   },
   {
+    position: { x: 300, y: -50, z: 400, direction: Math.PI / -2 },
+    color: { v1: 0, v2: 0, v3: 0 },
+    message: "GitHub",
+    textSize: 10,
+    plane: {
+      width: 100,
+      height: 50,
+    },
+  },
+  {
+    position: { x: 190, y: -50, z: 400, direction: Math.PI / -2 },
+    color: { v1: 0, v2: 0, v3: 0 },
+    message: "LinkedIn",
+    textSize: 10,
+    plane: {
+      width: 100,
+      height: 50,
+    },
+  },
+  {
+    position: { x: 80, y: -50, z: 400, direction: Math.PI / -2 },
+    color: { v1: 0, v2: 0, v3: 0 },
+    message: "CV",
+    textSize: 10,
+    plane: {
+      width: 100,
+      height: 50,
+    },
+  },
+  {
+    position: { x: -55, y: -50, z: 400, direction: Math.PI / -2 },
+    color: { v1: 0, v2: 0, v3: 0 },
+    message: "Creative Coding",
+    textSize: 10,
+    plane: {
+      width: 150,
+      height: 50,
+    },
+  },
+  {
     position: { x: 300, y: -100, z: -300, direction: Math.PI / 2 },
     color: { v1: 0, v2: 0, v3: 0 },
     message: "Hi, I'm Melissa",
