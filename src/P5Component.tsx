@@ -10,6 +10,15 @@ let instructions: p5.Graphics;
 const textBlocks: ITextBlock[] = [];
 let portal: p5.Graphics;
 
+
+
+interface P5ComponentProps {
+  setPage: React.Dispatch<React.SetStateAction<"3d-home" | "static-home" | "todo-app" | "restaurant" | "playlist-converter" | "pokemon-top-trumps">>;
+}
+
+function P5Component({setPage}: P5ComponentProps): JSX.Element {
+  // create a reference to the container in which the p5 instance should place the canvas
+  const p5ContainerRef = useRef<HTMLInputElement>(null);
 function sketch(p: p5) {
   // p is a reference to the p5 instance this sketch is attached to
   p.setup = function () {
@@ -55,7 +64,17 @@ function sketch(p: p5) {
       drawText(item);
     }
     drawPortal();
+    checkForRedirects();
+    console.log(myPosition)
   };
+
+  function checkForRedirects() {
+    if (myPosition.x>80 && myPosition.x<120 && myPosition.z>80 && myPosition.z<120) {
+      setPage('todo-app');
+      myPosition.x = 50;
+      myPosition.z = 80;
+    }
+  }
 
   function drawText(textBlock: ITextBlock) {
     const { graphics, textBox } = textBlock;
@@ -78,7 +97,7 @@ function sketch(p: p5) {
 
   function drawPortal() {
     p.push();
-    p.translate(0, 0, 0);
+    p.translate(100, 0, 100);
     p.rotateX(p.PI / -2);
     // portal.background(138,43,226);
     // p.fill(200, 200, 200);
@@ -159,11 +178,6 @@ function sketch(p: p5) {
     }
   }
 }
-
-function P5Component(): JSX.Element {
-  // create a reference to the container in which the p5 instance should place the canvas
-  const p5ContainerRef = useRef<HTMLInputElement>(null);
-
   useEffect(() => {
     // On component creation, instantiate a p5 object with the sketch and container reference
     if (p5ContainerRef.current) {
