@@ -22,4 +22,9 @@ export interface ITextBox {
   position: IPosition;
   color: IColor;
   message: string;
+  textSize: number;
+  plane: {
+    width: number;
+    height: number;
+  }
 }
