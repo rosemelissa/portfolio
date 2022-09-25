@@ -1,10 +1,31 @@
 import p5 from 'p5'
 import { useEffect, useRef } from 'react';
 
+interface IPosition {
+    x: number;
+    y: number;
+    z: number;
+    direction: number;
+}
+
+interface IColor {
+    v1: number;
+    v2: number;
+    v3: number;
+}
+
+interface ITextBlock {
+    graphics: p5.Graphics;
+    position: IPosition;
+    color: IColor;
+    message: string;
+}
+
 let myCamera: p5.Camera;
-const myPosition = {x: 0, y: 0, z: 0, direction: 0};
+const myPosition: IPosition = {x: 0, y: 0, z: 0, direction: 0};
 let cameraChoice: 'chase'|'far'|'back' = 'back';
 let instructions: p5.Graphics;
+const textBoxes: ITextBlock[] = []
 
 
 function sketch(p: p5) {
@@ -21,6 +42,10 @@ function sketch(p: p5) {
 	myCamera.lookAt(0, 0, 0);
     instructions = p.createGraphics(200, 200);
     instructions.textSize(75);
+    textBoxes.push({graphics: p.createGraphics(200, 200),
+        position: {x: 0, y: 0, z: 0, direction: 0},
+        color: {v1: 0, v2: 0, v3: 0},
+        message: 'test'})
     }
 
     p.draw = function() {
@@ -43,12 +68,16 @@ function sketch(p: p5) {
     
         keyPressed();
         // your draw code here
-        drawInstructions();
+        // drawInstructions();
+        for (const item of textBoxes) {
+            drawText(item);
+        }
     }
 
     function drawInstructions(){
         p.push();
-        p.translate(0, -50, 0);
+        p.translate(20, -50, 0);
+        p.rotateY(-1*p.PI/2);
         p.fill(0, 0, 0)
         instructions.background(255);
         instructions.text('hello!', 0, 100);
@@ -61,6 +90,22 @@ function sketch(p: p5) {
         // p.translate(20, 0, 0);
         // p.text('Instructions', 0, 0);
         // p.pop();
+    }
+
+    function drawText(textBlock: ITextBlock) {
+        const {graphics, position, color, message} = textBlock;
+        const {x, y, z, direction} = position;
+        const {v1, v2, v3} = color;
+        graphics.textSize(75);
+        p.push();
+        p.translate(x, y, z);
+        p.rotateY(direction-1*p.PI/2);
+        p.fill(v1, v2, v3)
+        graphics.background(255);
+        graphics.text(message, 0, 100);
+        p.texture(graphics);
+        p.plane(50);
+        p.pop();
     }
 
     function moveSelf(){
@@ -94,7 +139,7 @@ function sketch(p: p5) {
                     myCamera.setPosition(myPosition.x, -400, myPosition.z);
                     myCamera.lookAt(myPosition.x - 50*p.cos(myPosition.direction), myPosition.y, myPosition.z - 50*p.sin(myPosition.direction));
             } else if (cameraChoice === 'back') {
-                myCamera.setPosition(myPosition.x - 200*p.cos(myPosition.direction), -200, myPosition.z - 200*p.sin(myPosition.direction));
+                myCamera.setPosition(myPosition.x - 200*p.cos(myPosition.direction), -100, myPosition.z - 200*p.sin(myPosition.direction));
                 myCamera.lookAt(myPosition.x, -50, myPosition.z);	
             }
         }
