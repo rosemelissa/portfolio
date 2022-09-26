@@ -16,7 +16,7 @@ function PokemonTopTrumps({
   setPage,
 }: IPokemonTopTrumpsProps): JSX.Element {
   return (
-    <div id="tpokemon-top-trumps" className='project'>
+    <div id="tpokemon-top-trumps" className="project">
       <h1>Pokemon Top Trumps</h1>
       <button type="button" onClick={() => setPage("home")}>
         Back

@@ -19,6 +19,7 @@ function drawText(p: p5, textBlock: ITextBlock) {
   graphics.textSize(textSize);
   p.push();
   p.translate(x, y, z);
+  p.rotateZ(p.PI / 4);
   p.rotateY(direction - (1 * p.PI) / 2);
   p.fill(v1, v2, v3);
   graphics.background(255);

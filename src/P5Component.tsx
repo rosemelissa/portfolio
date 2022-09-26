@@ -6,11 +6,14 @@ import { portals, links } from "./utils/P5utils/portalsAndLinks";
 import drawSelf from "./utils/P5utils/drawSelf";
 import drawPortals from "./utils/P5utils/drawPortals";
 import drawTextBlocks from "./utils/P5utils/drawTextBlocks";
+import { floorTextBoxes } from "./utils/P5utils/floorTextBoxes";
+import drawFloorTextBlocks from "./utils/P5utils/drawFloorTextBlocks";
 
 let myCamera: p5.Camera;
 const myPosition: IPosition = { x: 0, y: 0, z: 0, direction: 0 };
 let instructions: p5.Graphics;
 const textBlocks: ITextBlock[] = [];
+const floorTextBlocks: ITextBlock[] = [];
 let portal: p5.Graphics;
 
 interface P5ComponentProps {
@@ -30,7 +33,7 @@ function P5Component({ setPage }: P5ComponentProps): JSX.Element {
   function sketch(p: p5) {
     p.setup = function () {
       p.createCanvas(p.windowWidth * 0.8, p.windowHeight * 0.8, p.WEBGL);
-      p.background(200);
+      p.background(0);
       p.debugMode(500, 10);
       myCamera = p.createCamera();
       moveCamera();
@@ -43,10 +46,16 @@ function P5Component({ setPage }: P5ComponentProps): JSX.Element {
           textBox,
         });
       }
+      for (const textBox of floorTextBoxes) {
+        floorTextBlocks.push({
+          graphics: p.createGraphics(textBox.plane.width, textBox.plane.height),
+          textBox,
+        });
+      }
     };
 
     p.draw = function () {
-      p.background(200);
+      p.background(0);
       p.orbitControl(5, 5, 0.01);
 
       //Add some lights (every frame!) ------------------------------------------------
@@ -59,10 +68,11 @@ function P5Component({ setPage }: P5ComponentProps): JSX.Element {
 
       //Add a little light evenly to ALL surfaces.  Not too much or we'll see no shadow
       p.ambientLight(180, 150, 150);
-
+      // p.ambientLight(255, 255, 255);
       drawSelf(p, myPosition);
       moveSelf();
       drawTextBlocks(p, textBlocks);
+      drawFloorTextBlocks(p, floorTextBlocks);
       // for (const item of textBlocks) {
       //   drawText(item);
       // }

@@ -10,18 +10,18 @@ export const portals: {
 ];
 
 export const links: { name: string; url: string; x: number; z: number }[] = [
-  { name: "GitHub", url: "https://github.com/rosemelissa", x: 300, z: 400 },
+  { name: "GitHub", url: "https://github.com/rosemelissa", x: 750, z: 400 },
   {
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/melissa-rose123/",
-    x: 190,
+    x: 640,
     z: 400,
   },
-  { name: "CV", url: "https://github.com/rosemelissa", x: 80, z: 400 },
+  { name: "CV", url: "https://github.com/rosemelissa", x: 530, z: 400 },
   {
     name: "Creative Coding",
     url: "https://openprocessing.org/user/334099?view=sketches&o=40",
-    x: -55,
+    x: 420,
     z: 400,
   },
 ];

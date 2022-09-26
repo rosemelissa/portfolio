@@ -3,17 +3,26 @@ import { portals, links } from "./portalsAndLinks";
 
 export default function drawPortals(p: p5, portal: p5.Graphics): void {
   for (const projectPortal of portals) {
-    drawPortal(p, portal, projectPortal.x, projectPortal.z);
+    drawPortal(p, portal, projectPortal.x, projectPortal.z, "portal");
   }
   for (const link of links) {
-    drawPortal(p, portal, link.x, link.z);
+    drawPortal(p, portal, link.x, link.z, "link");
   }
 }
 
-function drawPortal(p: p5, portal: p5.Graphics, x: number, z: number) {
+function drawPortal(
+  p: p5,
+  portal: p5.Graphics,
+  x: number,
+  z: number,
+  portalOrLink: "portal" | "link"
+) {
   p.push();
   p.translate(x, 0, z);
-  p.rotateX(p.PI / -2);
+  //   p.rotateX(p.PI / -2);
+  if (portalOrLink === "portal") {
+    p.rotateY(p.PI / -2);
+  }
   // portal.background(138,43,226);
   // p.fill(200, 200, 200);
   portal.fill(138, 43, 226);
