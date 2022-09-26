@@ -117,13 +117,13 @@ function P5Component({ setPage }: P5ComponentProps): JSX.Element {
         moveCamera();
       }
       if (p.keyIsDown(p.UP_ARROW)) {
-        myPosition.x += 3 * p.cos(myPosition.direction);
-        myPosition.z += 3 * p.sin(myPosition.direction);
+        myPosition.x += 10 * p.cos(myPosition.direction);
+        myPosition.z += 10 * p.sin(myPosition.direction);
         moveCamera();
       }
       if (p.keyIsDown(p.DOWN_ARROW)) {
-        myPosition.x -= 3 * p.cos(myPosition.direction);
-        myPosition.z -= 3 * p.sin(myPosition.direction);
+        myPosition.x -= 10 * p.cos(myPosition.direction);
+        myPosition.z -= 10 * p.sin(myPosition.direction);
         moveCamera();
       }
     }
