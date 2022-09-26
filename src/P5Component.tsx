@@ -6,10 +6,8 @@ import { portals, links } from './utils/P5utils/portalsAndLinks'
 
 let myCamera: p5.Camera;
 const myPosition: IPosition = { x: 0, y: 0, z: 0, direction: 0 };
-let cameraChoice: "chase" | "far" | "back" = "back";
 let instructions: p5.Graphics;
 const textBlocks: ITextBlock[] = [];
-
 let portal: p5.Graphics;
 
 interface P5ComponentProps {
@@ -61,7 +59,6 @@ function P5Component({ setPage }: P5ComponentProps): JSX.Element {
 
       drawSelf();
       moveSelf();
-      keyPressed();
       for (const item of textBlocks) {
         drawText(item);
       }
@@ -180,40 +177,15 @@ function P5Component({ setPage }: P5ComponentProps): JSX.Element {
     }
 
     function moveCamera() {
-      if (cameraChoice === "chase") {
-        myCamera.setPosition(
-          myPosition.x - 50 * p.cos(myPosition.direction),
-          -30,
-          myPosition.z - 50 * p.sin(myPosition.direction)
-        );
-        myCamera.lookAt(myPosition.x, 0, myPosition.z);
-      } else if (cameraChoice === "far") {
-        myCamera.setPosition(myPosition.x, -400, myPosition.z);
-        myCamera.lookAt(
-          myPosition.x - 50 * p.cos(myPosition.direction),
-          myPosition.y,
-          myPosition.z - 50 * p.sin(myPosition.direction)
-        );
-      } else if (cameraChoice === "back") {
         myCamera.setPosition(
           myPosition.x - 200 * p.cos(myPosition.direction),
           -100,
           myPosition.z - 200 * p.sin(myPosition.direction)
         );
         myCamera.lookAt(myPosition.x, -50, myPosition.z);
-      }
     }
 
-    function keyPressed() {
-      if (p.key === "c") {
-        if (cameraChoice === "chase") {
-          cameraChoice = "far";
-        } else {
-          // myCamera.lookAt(myPlayer.x, 0, myPlayer.z);
-          cameraChoice = "chase";
-        }
-      }
-    }
+    
   }
   useEffect(() => {
     // On component creation, instantiate a p5 object with the sketch and container reference
