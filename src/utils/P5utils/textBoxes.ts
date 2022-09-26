@@ -1,4 +1,4 @@
-import { ITextBox } from "./interfaces";
+import { ITextBox } from "../../interfaces";
 
 export const textBoxes: ITextBox[] = [
   //   {

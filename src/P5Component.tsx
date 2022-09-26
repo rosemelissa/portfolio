@@ -1,39 +1,15 @@
 import p5 from "p5";
 import { useEffect, useRef } from "react";
 import { IPosition, ITextBlock } from "./interfaces";
-import { textBoxes } from "./textBoxes";
+import { textBoxes } from "./utils/P5utils/textBoxes";
+import { portals, links } from './utils/P5utils/portalsAndLinks'
 
 let myCamera: p5.Camera;
 const myPosition: IPosition = { x: 0, y: 0, z: 0, direction: 0 };
 let cameraChoice: "chase" | "far" | "back" = "back";
 let instructions: p5.Graphics;
 const textBlocks: ITextBlock[] = [];
-const portals: {
-  name: "todo-app" | "restaurant" | "playlist-converter" | "pokemon-top-trumps";
-  x: number;
-  z: number;
-}[] = [
-  { name: "todo-app", x: 800, z: -300 },
-  { name: "restaurant", x: 800, z: -100 },
-  { name: "playlist-converter", x: 800, z: 100 },
-  { name: "pokemon-top-trumps", x: 800, z: 300 },
-];
-const links: { name: string; url: string; x: number; z: number }[] = [
-  { name: "GitHub", url: "https://github.com/rosemelissa", x: 300, z: 400 },
-  {
-    name: "LinkedIn",
-    url: "https://www.linkedin.com/in/melissa-rose123/",
-    x: 190,
-    z: 400,
-  },
-  { name: "CV", url: "https://github.com/rosemelissa", x: 80, z: 400 },
-  {
-    name: "Creative Coding",
-    url: "https://openprocessing.org/user/334099?view=sketches&o=40",
-    x: -55,
-    z: 400,
-  },
-];
+
 let portal: p5.Graphics;
 
 interface P5ComponentProps {
