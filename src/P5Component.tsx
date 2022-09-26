@@ -2,7 +2,7 @@ import p5 from "p5";
 import { useEffect, useRef } from "react";
 import { IPosition, ITextBlock } from "./interfaces";
 import { textBoxes } from "./utils/P5utils/textBoxes";
-import { portals, links } from './utils/P5utils/portalsAndLinks'
+import { portals, links } from "./utils/P5utils/portalsAndLinks";
 import drawSelf from "./utils/P5utils/drawSelf";
 import drawPortals from "./utils/P5utils/drawPortals";
 import drawTextBlocks from "./utils/P5utils/drawTextBlocks";
@@ -70,23 +70,6 @@ function P5Component({ setPage }: P5ComponentProps): JSX.Element {
       checkForRedirects();
     };
 
-    // function drawSelf() {
-    //   p.push();
-    //   p.translate(myPosition.x, myPosition.y, myPosition.z);
-    //   p.fill(204, 102, 0);
-    //   p.sphere(2);
-    //   p.pop();
-    // }
-
-    // function drawPortals() {
-    //   for (const portal of portals) {
-    //     drawPortal(portal.x, portal.z);
-    //   }
-    //   for (const link of links) {
-    //     drawPortal(link.x, link.z);
-    //   }
-    // }
-
     function checkForRedirects() {
       for (const portal of portals) {
         if (
@@ -114,59 +97,14 @@ function P5Component({ setPage }: P5ComponentProps): JSX.Element {
       }
     }
 
-    // function drawText(textBlock: ITextBlock) {
-    //   const { graphics, textBox } = textBlock;
-    //   const { position, color, message, textSize, plane } = textBox;
-    //   const { x, y, z, direction } = position;
-    //   const { v1, v2, v3 } = color;
-    //   const { width, height } = plane;
-    //   graphics.textSize(textSize);
-    //   p.push();
-    //   p.translate(x, y, z);
-    //   p.rotateY(direction - (1 * p.PI) / 2);
-    //   p.fill(v1, v2, v3);
-    //   graphics.background(255);
-    //   graphics.text(message, 0, 0, width, height);
-    //   graphics.textAlign(p.CENTER, p.CENTER);
-    //   p.texture(graphics);
-    //   p.plane(width, height, 2, 2);
-    //   p.pop();
-    // }
-
-    // function drawPortal(x: number, z: number) {
-    //   p.push();
-    //   p.translate(x, 0, z);
-    //   p.rotateX(p.PI / -2);
-    //   // portal.background(138,43,226);
-    //   // p.fill(200, 200, 200);
-    //   portal.fill(138, 43, 226);
-    //   portal.circle(50, 50, 100);
-    //   for (let i = 100; i >= 10; i -= 10) {
-    //     portal.noStroke();
-    //     portal.fill(0, 0, 0, 50);
-    //     portal.circle(50, 50, i);
-    //   }
-    //   for (let i = 0; i < 20; i++) {
-    //     portal.noStroke();
-    //     portal.fill(247, 245, 77);
-    //     portal.circle(p.random(0, 100), p.random(0, 100), 5);
-    //   }
-    //   // portal.background(100);
-    //   p.texture(portal);
-    //   p.plane(100, 100, 2, 2);
-    //   p.pop();
-    // }
-
     function moveSelf() {
       if (p.keyIsDown(p.RIGHT_ARROW)) {
         myPosition.direction += 0.1;
         moveCamera();
-        // myCamera.lookAt(myPosition.x, 0, myPosition.z);
       }
       if (p.keyIsDown(p.LEFT_ARROW)) {
         myPosition.direction -= 0.1;
         moveCamera();
-        // myCamera.lookAt(myPosition.x, 0, myPosition.z);
       }
       if (p.keyIsDown(p.UP_ARROW)) {
         myPosition.x += 3 * p.cos(myPosition.direction);
@@ -181,15 +119,13 @@ function P5Component({ setPage }: P5ComponentProps): JSX.Element {
     }
 
     function moveCamera() {
-        myCamera.setPosition(
-          myPosition.x - 200 * p.cos(myPosition.direction),
-          -100,
-          myPosition.z - 200 * p.sin(myPosition.direction)
-        );
-        myCamera.lookAt(myPosition.x, -50, myPosition.z);
+      myCamera.setPosition(
+        myPosition.x - 200 * p.cos(myPosition.direction),
+        -100,
+        myPosition.z - 200 * p.sin(myPosition.direction)
+      );
+      myCamera.lookAt(myPosition.x, -50, myPosition.z);
     }
-
-    
   }
   useEffect(() => {
     // On component creation, instantiate a p5 object with the sketch and container reference

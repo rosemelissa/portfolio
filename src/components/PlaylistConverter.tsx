@@ -11,7 +11,10 @@ interface IPlaylistConverterProps {
   >;
 }
 
-function PlaylistConverter({ mode, setPage }: IPlaylistConverterProps): JSX.Element {
+function PlaylistConverter({
+  mode,
+  setPage,
+}: IPlaylistConverterProps): JSX.Element {
   return (
     <div id="todo-app">
       <h1>YouTube-to-Spotify Playlist Converter</h1>

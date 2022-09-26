@@ -11,7 +11,10 @@ interface IPokemonTopTrumpsProps {
   >;
 }
 
-function PokemonTopTrumps({ mode, setPage }: IPokemonTopTrumpsProps): JSX.Element {
+function PokemonTopTrumps({
+  mode,
+  setPage,
+}: IPokemonTopTrumpsProps): JSX.Element {
   return (
     <div id="todo-app">
       <h1>Pokemon Top Trumps</h1>

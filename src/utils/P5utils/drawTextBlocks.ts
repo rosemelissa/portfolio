@@ -2,9 +2,9 @@ import p5 from "p5";
 import { ITextBlock } from "../../interfaces";
 
 export default function drawTextBlocks(p: p5, textBlocks: ITextBlock[]): void {
-    for (const item of textBlocks) {
-        drawText(p, item);
-      }
+  for (const item of textBlocks) {
+    drawText(p, item);
+  }
 }
 
 function drawText(p: p5, textBlock: ITextBlock) {
