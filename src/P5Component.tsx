@@ -25,21 +25,14 @@ interface P5ComponentProps {
 }
 
 function P5Component({ setPage }: P5ComponentProps): JSX.Element {
-  // create a reference to the container in which the p5 instance should place the canvas
   const p5ContainerRef = useRef<HTMLInputElement>(null);
   function sketch(p: p5) {
-    // p is a reference to the p5 instance this sketch is attached to
     p.setup = function () {
       p.createCanvas(p.windowWidth * 0.8, p.windowHeight * 0.8, p.WEBGL);
       p.background(200);
-      p.debugMode(500, 10); // Add a grid and an axes guide.  RGB indicate XYZ, respectively (so Red is X axis. Direction of the stick outward indicates +ve on that axis.)
-
-      //optional
-      //Set up a non-default camera position and facing.  You *can* delete these and accept the defaults
+      p.debugMode(500, 10);
       myCamera = p.createCamera();
       moveCamera();
-      // myCamera.setPosition(100, -200, 400);
-      // myCamera.lookAt(0, 0, 0);
       instructions = p.createGraphics(200, 200);
       instructions.textSize(75);
       portal = p.createGraphics(100, 100);
@@ -65,11 +58,8 @@ function P5Component({ setPage }: P5ComponentProps): JSX.Element {
 
       //Add a little light evenly to ALL surfaces.  Not too much or we'll see no shadow
       p.ambientLight(180, 150, 150);
-      p.push();
-      p.translate(myPosition.x, myPosition.y, myPosition.z);
-      p.fill(204, 102, 0);
-      p.sphere(2);
-      p.pop();
+
+      drawSelf();
       moveSelf();
       keyPressed();
       for (const item of textBlocks) {
@@ -77,8 +67,15 @@ function P5Component({ setPage }: P5ComponentProps): JSX.Element {
       }
       drawPortals();
       checkForRedirects();
-      console.log(myPosition);
     };
+
+    function drawSelf() {
+      p.push();
+      p.translate(myPosition.x, myPosition.y, myPosition.z);
+      p.fill(204, 102, 0);
+      p.sphere(2);
+      p.pop();
+    }
 
     function drawPortals() {
       for (const portal of portals) {
