@@ -1,10 +1,7 @@
 import p5 from "p5";
 import { ITextBlock } from "../../interfaces";
 
-export default function drawFloorTextBlocks(
-  p: p5,
-  textBlocks: ITextBlock[]
-): void {
+export default function drawTextBlocks(p: p5, textBlocks: ITextBlock[]): void {
   for (const item of textBlocks) {
     drawText(p, item);
   }
