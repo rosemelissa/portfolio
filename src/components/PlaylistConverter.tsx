@@ -16,7 +16,7 @@ function PlaylistConverter({
   setPage,
 }: IPlaylistConverterProps): JSX.Element {
   return (
-    <div id="todo-app">
+    <div id="playlist-converter" className='project'>
       <h1>YouTube-to-Spotify Playlist Converter</h1>
       <button type="button" onClick={() => setPage("home")}>
         Back

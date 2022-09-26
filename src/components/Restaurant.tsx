@@ -13,7 +13,7 @@ interface IRestaurantProps {
 
 function Restaurant({ mode, setPage }: IRestaurantProps): JSX.Element {
   return (
-    <div id="todo-app">
+    <div id="restaurant" className='project'>
       <h1>Restaurant</h1>
       <button type="button" onClick={() => setPage("home")}>
         Back

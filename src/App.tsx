@@ -6,6 +6,7 @@ import TodoApp from "./components/TodoApp";
 import Home2D from "./Home2D";
 import P5Component from "./P5Component";
 import { greet } from "./utils/greet";
+import './app.css'
 
 function App(): JSX.Element {
   const [page, setPage] = useState<
@@ -18,7 +19,6 @@ function App(): JSX.Element {
   const [mode, setMode] = useState<"2D" | "3D">("3D");
   return (
     <>
-      <h1>{greet("World")}</h1>
       {page === "home" && (
         <button
           type="button"
