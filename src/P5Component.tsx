@@ -3,6 +3,9 @@ import { useEffect, useRef } from "react";
 import { IPosition, ITextBlock } from "./interfaces";
 import { textBoxes } from "./utils/P5utils/textBoxes";
 import { portals, links } from './utils/P5utils/portalsAndLinks'
+import drawSelf from "./utils/P5utils/drawSelf";
+import drawPortals from "./utils/P5utils/drawPortals";
+import drawTextBlocks from "./utils/P5utils/drawTextBlocks";
 
 let myCamera: p5.Camera;
 const myPosition: IPosition = { x: 0, y: 0, z: 0, direction: 0 };
@@ -57,31 +60,32 @@ function P5Component({ setPage }: P5ComponentProps): JSX.Element {
       //Add a little light evenly to ALL surfaces.  Not too much or we'll see no shadow
       p.ambientLight(180, 150, 150);
 
-      drawSelf();
+      drawSelf(p, myPosition);
       moveSelf();
-      for (const item of textBlocks) {
-        drawText(item);
-      }
-      drawPortals();
+      drawTextBlocks(p, textBlocks);
+      // for (const item of textBlocks) {
+      //   drawText(item);
+      // }
+      drawPortals(p, portal);
       checkForRedirects();
     };
 
-    function drawSelf() {
-      p.push();
-      p.translate(myPosition.x, myPosition.y, myPosition.z);
-      p.fill(204, 102, 0);
-      p.sphere(2);
-      p.pop();
-    }
+    // function drawSelf() {
+    //   p.push();
+    //   p.translate(myPosition.x, myPosition.y, myPosition.z);
+    //   p.fill(204, 102, 0);
+    //   p.sphere(2);
+    //   p.pop();
+    // }
 
-    function drawPortals() {
-      for (const portal of portals) {
-        drawPortal(portal.x, portal.z);
-      }
-      for (const link of links) {
-        drawPortal(link.x, link.z);
-      }
-    }
+    // function drawPortals() {
+    //   for (const portal of portals) {
+    //     drawPortal(portal.x, portal.z);
+    //   }
+    //   for (const link of links) {
+    //     drawPortal(link.x, link.z);
+    //   }
+    // }
 
     function checkForRedirects() {
       for (const portal of portals) {
@@ -110,48 +114,48 @@ function P5Component({ setPage }: P5ComponentProps): JSX.Element {
       }
     }
 
-    function drawText(textBlock: ITextBlock) {
-      const { graphics, textBox } = textBlock;
-      const { position, color, message, textSize, plane } = textBox;
-      const { x, y, z, direction } = position;
-      const { v1, v2, v3 } = color;
-      const { width, height } = plane;
-      graphics.textSize(textSize);
-      p.push();
-      p.translate(x, y, z);
-      p.rotateY(direction - (1 * p.PI) / 2);
-      p.fill(v1, v2, v3);
-      graphics.background(255);
-      graphics.text(message, 0, 0, width, height);
-      graphics.textAlign(p.CENTER, p.CENTER);
-      p.texture(graphics);
-      p.plane(width, height, 2, 2);
-      p.pop();
-    }
+    // function drawText(textBlock: ITextBlock) {
+    //   const { graphics, textBox } = textBlock;
+    //   const { position, color, message, textSize, plane } = textBox;
+    //   const { x, y, z, direction } = position;
+    //   const { v1, v2, v3 } = color;
+    //   const { width, height } = plane;
+    //   graphics.textSize(textSize);
+    //   p.push();
+    //   p.translate(x, y, z);
+    //   p.rotateY(direction - (1 * p.PI) / 2);
+    //   p.fill(v1, v2, v3);
+    //   graphics.background(255);
+    //   graphics.text(message, 0, 0, width, height);
+    //   graphics.textAlign(p.CENTER, p.CENTER);
+    //   p.texture(graphics);
+    //   p.plane(width, height, 2, 2);
+    //   p.pop();
+    // }
 
-    function drawPortal(x: number, z: number) {
-      p.push();
-      p.translate(x, 0, z);
-      p.rotateX(p.PI / -2);
-      // portal.background(138,43,226);
-      // p.fill(200, 200, 200);
-      portal.fill(138, 43, 226);
-      portal.circle(50, 50, 100);
-      for (let i = 100; i >= 10; i -= 10) {
-        portal.noStroke();
-        portal.fill(0, 0, 0, 50);
-        portal.circle(50, 50, i);
-      }
-      for (let i = 0; i < 20; i++) {
-        portal.noStroke();
-        portal.fill(247, 245, 77);
-        portal.circle(p.random(0, 100), p.random(0, 100), 5);
-      }
-      // portal.background(100);
-      p.texture(portal);
-      p.plane(100, 100, 2, 2);
-      p.pop();
-    }
+    // function drawPortal(x: number, z: number) {
+    //   p.push();
+    //   p.translate(x, 0, z);
+    //   p.rotateX(p.PI / -2);
+    //   // portal.background(138,43,226);
+    //   // p.fill(200, 200, 200);
+    //   portal.fill(138, 43, 226);
+    //   portal.circle(50, 50, 100);
+    //   for (let i = 100; i >= 10; i -= 10) {
+    //     portal.noStroke();
+    //     portal.fill(0, 0, 0, 50);
+    //     portal.circle(50, 50, i);
+    //   }
+    //   for (let i = 0; i < 20; i++) {
+    //     portal.noStroke();
+    //     portal.fill(247, 245, 77);
+    //     portal.circle(p.random(0, 100), p.random(0, 100), 5);
+    //   }
+    //   // portal.background(100);
+    //   p.texture(portal);
+    //   p.plane(100, 100, 2, 2);
+    //   p.pop();
+    // }
 
     function moveSelf() {
       if (p.keyIsDown(p.RIGHT_ARROW)) {
