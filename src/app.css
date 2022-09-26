@@ -27,6 +27,13 @@ a {
     background-color: #5591a9;
 }
 
+.P5Component {
+    display: flex;
+    height: 97vh;
+    justify-content: center;
+    align-items: flex-end;
+}
+
 .project {
     display: flex;
     flex-direction: column;
