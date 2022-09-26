@@ -20,14 +20,15 @@ function App(): JSX.Element {
   return (
     <>
       {page === "home" && (
-        <button
-          type="button"
+        <p
+          className='fake-button'
+          id='toggle-2d-3d'
           onClick={() => {
             mode === "3D" ? setMode("2D") : setMode("3D");
           }}
         >
           Toggle 2D/3D
-        </button>
+        </p>
       )}
       {page === "home" && mode === "3D" && <P5Component setPage={setPage} />}
       {page === "todo-app" && <TodoApp mode={mode} setPage={setPage} />}
