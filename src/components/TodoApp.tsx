@@ -25,32 +25,29 @@ function TodoApp({ mode, setPage }: ITodoAppProps): JSX.Element {
         <p className="fake-button" onClick={() => setPage("home")}>
           Back
         </p>
-        <p className="fake-button">
-          <a
-            href="https://melissa-todo-projects.netlify.app/"
-            rel="noreferrer"
-            target="_blank"
-          >
-            Link to app
-          </a>
+        <p
+          className="fake-button"
+          onClick={() =>
+            window.open("https://melissa-todo-projects.netlify.app/")
+          }
+        >
+          Link to app
         </p>
-        <p className="fake-button">
-          <a
-            href="https://github.com/rosemelissa/todo-projects-frontend"
-            rel="noreferrer"
-            target="_blank"
-          >
-            Frontend repository
-          </a>
+        <p
+          className="fake-button"
+          onClick={() =>
+            window.open("https://github.com/rosemelissa/todo-projects-frontend")
+          }
+        >
+          Frontend repository
         </p>
-        <p className="fake-button">
-          <a
-            href="https://github.com/rosemelissa/todo-projects-backend"
-            rel="noreferrer"
-            target="_blank"
-          >
-            Backend repository
-          </a>
+        <p
+          className="fake-button"
+          onClick={() =>
+            window.open("https://github.com/rosemelissa/todo-projects-backend")
+          }
+        >
+          Backend repository
         </p>
       </div>
       <div className="project-main-content">
