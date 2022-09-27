@@ -1,3 +1,9 @@
+import TodoNewProject from "../Images/TodoApp/TodoNewProject.png";
+import TodoColourCoding from "../Images/TodoApp/TodoColourCoding.png";
+import TodoEdit from "../Images/TodoApp/TodoEdit.png";
+import TodoFilter from "../Images/TodoApp/TodoFilter.png";
+import ExampleTodoList from "../Images/TodoApp/ExampleTodoList.png";
+
 interface ITodoAppProps {
   mode: "2D" | "3D";
   setPage: React.Dispatch<
@@ -19,51 +25,59 @@ function TodoApp({ mode, setPage }: ITodoAppProps): JSX.Element {
         <p className="fake-button" onClick={() => setPage("home")}>
           Back
         </p>
-        <p className="fake-button">
-          <a
-            href="https://melissa-todo-projects.netlify.app/"
-            rel="noreferrer"
-            target="_blank"
-          >
-            Link to app
-          </a>
+        <p
+          className="fake-button"
+          onClick={() =>
+            window.open("https://melissa-todo-projects.netlify.app/")
+          }
+        >
+          Link to app
         </p>
-        <p className="fake-button">
-          <a
-            href="https://github.com/rosemelissa/todo-projects-frontend"
-            rel="noreferrer"
-            target="_blank"
-          >
-            Frontend repository
-          </a>
+        <p
+          className="fake-button"
+          onClick={() =>
+            window.open("https://github.com/rosemelissa/todo-projects-frontend")
+          }
+        >
+          Frontend repository
         </p>
-        <p className="fake-button">
-          <a
-            href="https://github.com/rosemelissa/todo-projects-backend"
-            rel="noreferrer"
-            target="_blank"
-          >
-            Backend repository
-          </a>
+        <p
+          className="fake-button"
+          onClick={() =>
+            window.open("https://github.com/rosemelissa/todo-projects-backend")
+          }
+        >
+          Backend repository
         </p>
       </div>
       <div className="project-main-content">
-        <div className="text-image-couple">
-          <p>Description</p>
-          <img
-            src="https://www.musicmundial.com/en/wp-content/uploads/2022/06/Jungkook-finally-fulfills-one-of-his-dreams-after-going-on-hiatus-with-BTS.jpg"
-            alt="jungkook"
-          />
-        </div>
-        <div className="text-image-couple">
-          <p>Description2</p>
-          <img
-            src="https://www.musicmundial.com/en/wp-content/uploads/2022/06/Jungkook-finally-fulfills-one-of-his-dreams-after-going-on-hiatus-with-BTS.jpg"
-            alt="jungkook"
-          />
+        <h3 className="project-tagline">
+          Fullstack todo app using PostgreSQL, Express, Node.js, React, HTML,
+          and CSS
+        </h3>
+
+        <img
+          id="example-todo-list"
+          src={ExampleTodoList}
+          alt="Todo app landing page"
+        />
+
+        <h3>Key features:</h3>
+        <ul>
+          <li>Make, edit, and delete projects</li>
+          <li>Make, edit, and delete todos</li>
+          <li>Filter todos</li>
+          <li>View todo-status at a glance through colour coding</li>
+        </ul>
+
+        <div className="project-image-grid">
+          <img src={TodoNewProject} alt="Making a new project" />
+          <img src={TodoEdit} alt="Editing a todo" />
+
+          <img src={TodoFilter} alt="Filtering todos" />
+          <img src={TodoColourCoding} alt="Todos are colour coded" />
         </div>
       </div>
-      <p>Other documentation links</p>
     </div>
   );
 }
