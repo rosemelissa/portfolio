@@ -32,7 +32,7 @@ function P5Component({ setPage }: P5ComponentProps): JSX.Element {
   const p5ContainerRef = useRef<HTMLInputElement>(null);
   function sketch(p: p5) {
     p.setup = function () {
-      p.createCanvas(p.windowWidth , p.windowHeight, p.WEBGL);
+      p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL);
       p.background(0);
       p.debugMode(500, 10);
       myCamera = p.createCamera();
