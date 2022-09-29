@@ -45,7 +45,7 @@ function PokemonTopTrumps({ mode, setPage }: IPokemonTopTrumpsProps): JSX.Elemen
       
 
 
-<div className="loom-div"><iframe className="loom-iframe" title="pokemon-top-trumps-demo" src="https://www.loom.com/embed/35c5c623dd714c4eb2704a3524571e9f" frameBorder="0" allowFullScreen ></iframe></div>
+<div className="loom-div"><iframe className="loom-iframe" title="pokemon-top-trumps-demo" src="https://www.loom.com/embed/f32a27f810af47ea8c1b15d8710e95ed" frameBorder="0" allowFullScreen ></iframe></div>
         <h3>Key features:</h3>
         <ul>
           <li>Gets Pokemon data from Pokemon API</li>

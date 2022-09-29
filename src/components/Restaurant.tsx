@@ -54,7 +54,7 @@ function Restaurant({ mode, setPage }: IRestaurantProps): JSX.Element {
       
 
 
-<div className="loom-div"><iframe className="loom-iframe" title="restaurant-demo" src="https://www.loom.com/embed/35c5c623dd714c4eb2704a3524571e9f" frameBorder="0" allowFullScreen ></iframe></div>
+<div className="loom-div"><iframe className="loom-iframe" title="restaurant-demo" src="https://www.loom.com/embed/f1f57528dc4947f3a119381a221c9100" frameBorder="0" allowFullScreen ></iframe></div>
         
 <h3>Key features:</h3>
         <ul>

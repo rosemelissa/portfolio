@@ -53,7 +53,7 @@ function TodoApp({ mode, setPage }: ITodoAppProps): JSX.Element {
       
 
 
-<div className="loom-div"><iframe className="loom-iframe" title="todo-app-demo" src="https://www.loom.com/embed/35c5c623dd714c4eb2704a3524571e9f" frameBorder="0" allowFullScreen ></iframe></div>
+<div className="loom-div"><iframe className="loom-iframe" title="todo-app-demo" src="https://www.loom.com/embed/eaf8caa2a29d4cdaac649a59c1cffb23" frameBorder="0" allowFullScreen ></iframe></div>
         <h3>Key features:</h3>
         <ul>
           <li>Make, edit, and delete projects</li>
