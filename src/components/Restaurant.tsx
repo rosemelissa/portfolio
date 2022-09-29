@@ -1,8 +1,4 @@
-import TodoNewProject from "../Images/TodoApp/TodoNewProject.png";
-import TodoColourCoding from "../Images/TodoApp/TodoColourCoding.png";
-import TodoEdit from "../Images/TodoApp/TodoEdit.png";
-import TodoFilter from "../Images/TodoApp/TodoFilter.png";
-import ExampleTodoList from "../Images/TodoApp/ExampleTodoList.png";
+
 interface IRestaurantProps {
   mode: "2D" | "3D";
   setPage: React.Dispatch<
@@ -55,11 +51,7 @@ function Restaurant({ mode, setPage }: IRestaurantProps): JSX.Element {
           and CSS
         </h3>
 
-        <img
-          id="example-todo-list"
-          src={ExampleTodoList}
-          alt="Todo app landing page"
-        />
+        
 
         <h3>Key features:</h3>
         <ul>
@@ -75,13 +67,7 @@ function Restaurant({ mode, setPage }: IRestaurantProps): JSX.Element {
           <li>Admin can view the current table capacities of the restaurant</li>
         </ul>
 
-        <div className="project-image-grid">
-          <img src={TodoNewProject} alt="Making a new project" />
-          <img src={TodoEdit} alt="Editing a todo" />
-
-          <img src={TodoFilter} alt="Filtering todos" />
-          <img src={TodoColourCoding} alt="Todos are colour coded" />
-        </div>
+        
       </div>
     </div>
   );
