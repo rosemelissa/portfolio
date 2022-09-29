@@ -1,4 +1,3 @@
-
 interface IRestaurantProps {
   mode: "2D" | "3D";
   setPage: React.Dispatch<
@@ -15,12 +14,17 @@ interface IRestaurantProps {
 function Restaurant({ mode, setPage }: IRestaurantProps): JSX.Element {
   return (
     <div id="restaurant" className="project">
-      <h1>Restaurant booking system</h1>
-      <div className="nav-bar">
-        <p className="fake-button" onClick={() => setPage("home")}>
+      <h1>Restaurant booking site</h1>
+      <p className="fake-button back-button" onClick={() => setPage("home")}>
           Back
         </p>
-        <p
+      <div className="project-main-content">
+        <h3 className="project-tagline">
+          Fullstack restaurant booking site built using: PostgreSQL, Express, Nodemailer, Node.js, React, HTML,
+          and CSS
+        </h3>
+      <div className="nav-bar">
+      <p
           className="fake-button"
           onClick={() =>
             window.open("https://rosemelissa-restaurant.netlify.app/")
@@ -44,18 +48,18 @@ function Restaurant({ mode, setPage }: IRestaurantProps): JSX.Element {
         >
           Backend repository
         </p>
-      </div>
-      <div className="project-main-content">
-        <h3 className="project-tagline">
-          Fullstack todo app using PostgreSQL, Express, Node.js, React, HTML,
-          and CSS
-        </h3>
 
         
+      </div>
+      
 
-        <h3>Key features:</h3>
+
+<div className="loom-div"><iframe className="loom-iframe" title="restaurant-demo" src="https://www.loom.com/embed/35c5c623dd714c4eb2704a3524571e9f" frameBorder="0" allowFullScreen ></iframe></div>
+        
+<h3>Key features:</h3>
         <ul>
           <li>Make bookings for a certain date, time, and group size</li>
+          <li>Automatic booking confirmation email</li>
           <li>
             Table availability is automatically filtered to ensure there's a
             table before your booking is confirmed
