@@ -1,8 +1,3 @@
-import TodoNewProject from "../Images/TodoApp/TodoNewProject.png";
-import TodoColourCoding from "../Images/TodoApp/TodoColourCoding.png";
-import TodoEdit from "../Images/TodoApp/TodoEdit.png";
-import TodoFilter from "../Images/TodoApp/TodoFilter.png";
-import ExampleTodoList from "../Images/TodoApp/ExampleTodoList.png";
 interface IRestaurantProps {
   mode: "2D" | "3D";
   setPage: React.Dispatch<
@@ -19,51 +14,56 @@ interface IRestaurantProps {
 function Restaurant({ mode, setPage }: IRestaurantProps): JSX.Element {
   return (
     <div id="restaurant" className="project">
-      <h1>Restaurant booking system</h1>
-      <div className="nav-bar">
-        <p className="fake-button" onClick={() => setPage("home")}>
-          Back
-        </p>
-        <p
-          className="fake-button"
-          onClick={() =>
-            window.open("https://rosemelissa-restaurant.netlify.app/")
-          }
-        >
-          Link to app
-        </p>
-        <p
-          className="fake-button"
-          onClick={() =>
-            window.open("https://github.com/rosemelissa/restaurant-frontend")
-          }
-        >
-          Frontend repository
-        </p>
-        <p
-          className="fake-button"
-          onClick={() =>
-            window.open("https://github.com/rosemelissa/restaurant-backend")
-          }
-        >
-          Backend repository
-        </p>
-      </div>
+      <h1>Restaurant booking site</h1>
+      <p className="fake-button back-button" onClick={() => setPage("home")}>
+        Back
+      </p>
       <div className="project-main-content">
         <h3 className="project-tagline">
-          Fullstack todo app using PostgreSQL, Express, Node.js, React, HTML,
-          and CSS
+          Fullstack restaurant booking site built using: PostgreSQL, Express,
+          Nodemailer, Node.js, React, HTML, and CSS
         </h3>
+        <div className="nav-bar">
+          <p
+            className="fake-button"
+            onClick={() =>
+              window.open("https://rosemelissa-restaurant.netlify.app/")
+            }
+          >
+            Link to app
+          </p>
+          <p
+            className="fake-button"
+            onClick={() =>
+              window.open("https://github.com/rosemelissa/restaurant-frontend")
+            }
+          >
+            Frontend repository
+          </p>
+          <p
+            className="fake-button"
+            onClick={() =>
+              window.open("https://github.com/rosemelissa/restaurant-backend")
+            }
+          >
+            Backend repository
+          </p>
+        </div>
 
-        <img
-          id="example-todo-list"
-          src={ExampleTodoList}
-          alt="Todo app landing page"
-        />
+        <div className="loom-div">
+          <iframe
+            className="loom-iframe"
+            title="restaurant-demo"
+            src="https://www.loom.com/embed/f1f57528dc4947f3a119381a221c9100"
+            frameBorder="0"
+            allowFullScreen
+          ></iframe>
+        </div>
 
         <h3>Key features:</h3>
         <ul>
           <li>Make bookings for a certain date, time, and group size</li>
+          <li>Automatic booking confirmation email</li>
           <li>
             Table availability is automatically filtered to ensure there's a
             table before your booking is confirmed
@@ -74,14 +74,6 @@ function Restaurant({ mode, setPage }: IRestaurantProps): JSX.Element {
           </li>
           <li>Admin can view the current table capacities of the restaurant</li>
         </ul>
-
-        <div className="project-image-grid">
-          <img src={TodoNewProject} alt="Making a new project" />
-          <img src={TodoEdit} alt="Editing a todo" />
-
-          <img src={TodoFilter} alt="Filtering todos" />
-          <img src={TodoColourCoding} alt="Todos are colour coded" />
-        </div>
       </div>
     </div>
   );

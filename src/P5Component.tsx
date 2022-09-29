@@ -8,6 +8,9 @@ import drawPortals from "./utils/P5utils/drawPortals";
 import drawTextBlocks from "./utils/P5utils/drawTextBlocks";
 import { floorTextBoxes } from "./utils/P5utils/floorTextBoxes";
 import drawFloorTextBlocks from "./utils/P5utils/drawFloorTextBlocks";
+import drawStars from "./utils/P5utils/drawStars";
+// import rocketPalette from './P5Objects/vividmemory8-1x.png';
+// import rocketObject from './P5Objects/rocketwithcolours.obj';
 
 let myCamera: p5.Camera;
 const myPosition: IPosition = { x: 0, y: 0, z: 0, direction: 0 };
@@ -15,6 +18,9 @@ let instructions: p5.Graphics;
 const textBlocks: ITextBlock[] = [];
 const floorTextBlocks: ITextBlock[] = [];
 let portal: p5.Graphics;
+const stars: { x: number; y: number; z: number }[] = [];
+// let myModel: p5.Geometry;
+// let textureImage: p5.Graphics | p5.Image | p5.MediaElement;
 
 interface P5ComponentProps {
   setPage: React.Dispatch<
@@ -31,6 +37,10 @@ interface P5ComponentProps {
 function P5Component({ setPage }: P5ComponentProps): JSX.Element {
   const p5ContainerRef = useRef<HTMLInputElement>(null);
   function sketch(p: p5) {
+    // p.preload = function () {
+    // 	myModel = p.loadModel("./P5Objects/rocketwithcolours.obj", true);
+    // 	textureImage = p.loadImage(rocketPalette);
+    // }
     p.setup = function () {
       p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL);
       p.background(0);
@@ -52,6 +62,17 @@ function P5Component({ setPage }: P5ComponentProps): JSX.Element {
           textBox,
         });
       }
+      for (let i = 0; i < 100; i++) {
+        let x = p.random(-1000, 1000);
+        let y = p.random(-1000, 1000);
+        let z = p.random(-1000, 1000);
+        while (x * x + y * y + z * z < 1000000) {
+          x = p.random(-1000, 1000);
+          y = p.random(-1000, 1000);
+          z = p.random(-1000, 1000);
+        }
+        stars.push({ x, y, z });
+      }
     };
 
     p.draw = function () {
@@ -65,7 +86,14 @@ function P5Component({ setPage }: P5ComponentProps): JSX.Element {
         p.color(255, 255, 255),
         p.createVector(-0.8, -0.5, -0.2)
       );
-
+      // p.push();
+      // p.translate(0, 0, 0);
+      // p.texture(textureImage);
+      // p.fill(255, 255, 255);
+      // p.stroke(255, 255, 255);
+      // p.model(myModel);
+      // // p.sphere(5);
+      // p.pop();
       //Add a little light evenly to ALL surfaces.  Not too much or we'll see no shadow
       p.ambientLight(180, 150, 150);
       // p.ambientLight(255, 255, 255);
@@ -78,6 +106,7 @@ function P5Component({ setPage }: P5ComponentProps): JSX.Element {
       // }
       drawPortals(p, portal);
       checkForRedirects();
+      drawStars(p, stars);
     };
 
     function checkForRedirects() {

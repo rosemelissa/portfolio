@@ -27,6 +27,18 @@ a {
   background-color: #5591a9;
 }
 
+#instructions-3d {
+  text-align: center;
+  width: 20vw;
+  padding: 10px 10vw;
+  position: absolute;
+  left: 30vw;
+  top: 100px;
+  background-color: rgb(0, 0, 0);
+  border: 5px solid #5591a9;
+  border-radius: 10px;
+}
+
 .P5Component {
   display: flex;
   height: 97vh;
@@ -40,6 +52,11 @@ a {
   align-items: center;
 }
 
+.back-button {
+  position: absolute;
+  left: 10px;
+}
+
 h1,
 h2 {
   color: #9ccddc;
@@ -50,6 +67,7 @@ h2 {
 
 h1 {
   font-size: 72px;
+  text-align: center;
 }
 
 h2 {
@@ -68,42 +86,22 @@ h2 {
   width: 80vw;
   padding-left: 50px;
   padding-right: 50px;
+  margin-top: 50px;
   background: rgba(6, 44, 67, 0.5);
   /* background-color: #062c43; */
-  color: #ced7e0;
+  /* color: #ced7e0; */
 }
 
-.project .project-main-content img {
+.project .loom-div {
+  padding-bottom: 20px;
   width: inherit;
+  height: 45.6vw;
 }
 
-.project .project-image-grid {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
+.project .loom-iframe {
+  width: inherit;
+  height: inherit;
 }
-
-.project .project-image-grid img {
-  width: 500px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-/* .project .text-image-couple {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  margin: 20px;
-}
-
-.project .text-image-couple p {
-  color: #ced7e0;
-}
-
-.project .text-image-couple img {
-  width: 600px;
-} */
 
 #home-2d {
   display: flex;
