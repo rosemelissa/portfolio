@@ -54,7 +54,7 @@ function PlaylistConverter({ mode, setPage }: IPlaylistConverterProps): JSX.Elem
   <p>Password: P4ssw0rd</p></>}
 
 
-<div className="loom-div"><iframe className="loom-iframe" title="todo-app-demo" src="https://www.loom.com/embed/35c5c623dd714c4eb2704a3524571e9f" frameBorder="0" allowFullScreen ></iframe></div>
+<div className="loom-div"><iframe className="loom-iframe" title="playlist-converter-demo" src="https://www.loom.com/embed/35c5c623dd714c4eb2704a3524571e9f" frameBorder="0" allowFullScreen ></iframe></div>
         <h3>Key features:</h3>
         <ul>
           <li>Make, edit, and delete projects</li>
