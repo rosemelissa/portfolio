@@ -8,6 +8,7 @@ import drawPortals from "./utils/P5utils/drawPortals";
 import drawTextBlocks from "./utils/P5utils/drawTextBlocks";
 import { floorTextBoxes } from "./utils/P5utils/floorTextBoxes";
 import drawFloorTextBlocks from "./utils/P5utils/drawFloorTextBlocks";
+import drawStars from "./utils/P5utils/drawStars";
 // import rocketPalette from './P5Objects/vividmemory8-1x.png';
 // import rocketObject from './P5Objects/rocketwithcolours.obj';
 
@@ -17,6 +18,7 @@ let instructions: p5.Graphics;
 const textBlocks: ITextBlock[] = [];
 const floorTextBlocks: ITextBlock[] = [];
 let portal: p5.Graphics;
+const stars: { x: number; y: number; z: number }[] = [];
 // let myModel: p5.Geometry;
 // let textureImage: p5.Graphics | p5.Image | p5.MediaElement;
 
@@ -35,12 +37,10 @@ interface P5ComponentProps {
 function P5Component({ setPage }: P5ComponentProps): JSX.Element {
   const p5ContainerRef = useRef<HTMLInputElement>(null);
   function sketch(p: p5) {
-    
-
-// p.preload = function () {
-// 	myModel = p.loadModel("./P5Objects/rocketwithcolours.obj", true);	
-// 	textureImage = p.loadImage(rocketPalette);
-// }	
+    // p.preload = function () {
+    // 	myModel = p.loadModel("./P5Objects/rocketwithcolours.obj", true);
+    // 	textureImage = p.loadImage(rocketPalette);
+    // }
     p.setup = function () {
       p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL);
       p.background(0);
@@ -61,6 +61,17 @@ function P5Component({ setPage }: P5ComponentProps): JSX.Element {
           graphics: p.createGraphics(textBox.plane.width, textBox.plane.height),
           textBox,
         });
+      }
+      for (let i = 0; i < 100; i++) {
+        let x = p.random(-1000, 1000);
+        let y = p.random(-1000, 1000);
+        let z = p.random(-1000, 1000);
+        while (x * x + y * y + z * z < 1000000) {
+          x = p.random(-1000, 1000);
+          y = p.random(-1000, 1000);
+          z = p.random(-1000, 1000);
+        }
+        stars.push({ x, y, z });
       }
     };
 
@@ -95,6 +106,7 @@ function P5Component({ setPage }: P5ComponentProps): JSX.Element {
       // }
       drawPortals(p, portal);
       checkForRedirects();
+      drawStars(p, stars);
     };
 
     function checkForRedirects() {

@@ -16,47 +16,51 @@ function Restaurant({ mode, setPage }: IRestaurantProps): JSX.Element {
     <div id="restaurant" className="project">
       <h1>Restaurant booking site</h1>
       <p className="fake-button back-button" onClick={() => setPage("home")}>
-          Back
-        </p>
+        Back
+      </p>
       <div className="project-main-content">
         <h3 className="project-tagline">
-          Fullstack restaurant booking site built using: PostgreSQL, Express, Nodemailer, Node.js, React, HTML,
-          and CSS
+          Fullstack restaurant booking site built using: PostgreSQL, Express,
+          Nodemailer, Node.js, React, HTML, and CSS
         </h3>
-      <div className="nav-bar">
-      <p
-          className="fake-button"
-          onClick={() =>
-            window.open("https://rosemelissa-restaurant.netlify.app/")
-          }
-        >
-          Link to app
-        </p>
-        <p
-          className="fake-button"
-          onClick={() =>
-            window.open("https://github.com/rosemelissa/restaurant-frontend")
-          }
-        >
-          Frontend repository
-        </p>
-        <p
-          className="fake-button"
-          onClick={() =>
-            window.open("https://github.com/rosemelissa/restaurant-backend")
-          }
-        >
-          Backend repository
-        </p>
+        <div className="nav-bar">
+          <p
+            className="fake-button"
+            onClick={() =>
+              window.open("https://rosemelissa-restaurant.netlify.app/")
+            }
+          >
+            Link to app
+          </p>
+          <p
+            className="fake-button"
+            onClick={() =>
+              window.open("https://github.com/rosemelissa/restaurant-frontend")
+            }
+          >
+            Frontend repository
+          </p>
+          <p
+            className="fake-button"
+            onClick={() =>
+              window.open("https://github.com/rosemelissa/restaurant-backend")
+            }
+          >
+            Backend repository
+          </p>
+        </div>
 
-        
-      </div>
-      
+        <div className="loom-div">
+          <iframe
+            className="loom-iframe"
+            title="restaurant-demo"
+            src="https://www.loom.com/embed/f1f57528dc4947f3a119381a221c9100"
+            frameBorder="0"
+            allowFullScreen
+          ></iframe>
+        </div>
 
-
-<div className="loom-div"><iframe className="loom-iframe" title="restaurant-demo" src="https://www.loom.com/embed/f1f57528dc4947f3a119381a221c9100" frameBorder="0" allowFullScreen ></iframe></div>
-        
-<h3>Key features:</h3>
+        <h3>Key features:</h3>
         <ul>
           <li>Make bookings for a certain date, time, and group size</li>
           <li>Automatic booking confirmation email</li>
@@ -70,8 +74,6 @@ function Restaurant({ mode, setPage }: IRestaurantProps): JSX.Element {
           </li>
           <li>Admin can view the current table capacities of the restaurant</li>
         </ul>
-
-        
       </div>
     </div>
   );
