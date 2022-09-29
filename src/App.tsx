@@ -6,6 +6,7 @@ import TodoApp from "./components/TodoApp";
 import Home2D from "./Home2D";
 import P5Component from "./P5Component";
 import "./app.css";
+import Instructions3D from "./components/Instructions3D";
 
 function App(): JSX.Element {
   const [page, setPage] = useState<
@@ -16,6 +17,7 @@ function App(): JSX.Element {
     | "pokemon-top-trumps"
   >("home");
   const [mode, setMode] = useState<"2D" | "3D">("3D");
+  const [instructionsShow, setInstructionsShow] = useState<boolean>(true);
   return (
     <>
       {page === "home" && (
@@ -30,6 +32,9 @@ function App(): JSX.Element {
         </p>
       )}
       {page === "home" && mode === "3D" && <P5Component setPage={setPage} />}
+      {page === "home" && mode === "3D" && instructionsShow && (
+        <Instructions3D setInstructionsShow={setInstructionsShow} />
+      )}
       {page === "todo-app" && <TodoApp mode={mode} setPage={setPage} />}
       {page === "restaurant" && <Restaurant mode={mode} setPage={setPage} />}
       {page === "playlist-converter" && (

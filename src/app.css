@@ -27,6 +27,18 @@ a {
   background-color: #5591a9;
 }
 
+#instructions-3d {
+  text-align: center;
+  width: 20vw;
+  padding: 10px 10vw;
+  position: absolute;
+  left: 30vw;
+  top: 100px;
+  background-color: rgb(0, 0, 0);
+  border: 5px solid #5591a9;
+  border-radius: 10px;
+}
+
 .P5Component {
   display: flex;
   height: 97vh;
