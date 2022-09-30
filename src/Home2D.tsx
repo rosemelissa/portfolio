@@ -52,41 +52,24 @@ function Home2D({ setPage }: IHome2DProps): JSX.Element {
       </div>
       <h2>Links</h2>
       <div className="home-2d-links">
-        <p className="fake-button">
-          <a
-            href="https://github.com/rosemelissa"
-            rel="noreferrer"
-            target="_blank"
-          >
+        <p className="fake-button"
+        onClick={() => window.open("https://github.com/rosemelissa")}>
+          
             GitHub
-          </a>
         </p>
-        <p className="fake-button">
-          <a
-            href="https://www.linkedin.com/in/melissa-rose123/"
-            rel="noreferrer"
-            target="_blank"
-          >
+        <p className="fake-button"
+        onClick={() => window.open("https://www.linkedin.com/in/melissa-rose123/")}>
+          
             LinkedIn
-          </a>
         </p>
-        <p className="fake-button">
-          <a
-            href="https://melissa-todo-projects.netlify.app/"
-            rel="noreferrer"
-            target="_blank"
-          >
+        <p className="fake-button"
+        onClick={() => window.open("https://melissa-todo-projects.netlify.app/")}>
+          
             CV
-          </a>
         </p>
-        <p className="fake-button">
-          <a
-            href="https://openprocessing.org/user/334099?view=sketches&o=40"
-            rel="noreferrer"
-            target="_blank"
-          >
+        <p className="fake-button" onClick={() => window.open("https://openprocessing.org/user/334099?view=sketches&o=40")}>
+          
             Creative Coding
-          </a>
         </p>
       </div>
     </div>
