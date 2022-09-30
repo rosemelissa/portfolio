@@ -57,7 +57,7 @@ function PokemonTopTrumps({
         <h3>Key features:</h3>
         <ul>
           <li>Gets Pokemon data from Pokemon API</li>
-          <li>PLay top trumps against a computer</li>
+          <li>Play top trumps against a computer</li>
         </ul>
       </div>
     </div>
