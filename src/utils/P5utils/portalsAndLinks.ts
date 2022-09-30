@@ -1,4 +1,4 @@
-import file from "../../documents/Melissa Rose CV.pdf"
+import file from "../../documents/Melissa Rose CV.pdf";
 
 export const portals: {
   name: "todo-app" | "restaurant" | "playlist-converter" | "pokemon-top-trumps";
