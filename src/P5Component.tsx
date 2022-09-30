@@ -77,7 +77,7 @@ function P5Component({ setPage }: P5ComponentProps): JSX.Element {
 
     p.draw = function () {
       p.background(0);
-      p.orbitControl(5, 5, 0.01);
+      p.orbitControl(-5, -5, -5);
 
       //Add some lights (every frame!) ------------------------------------------------
       //Add directional light to surfaces which face it
