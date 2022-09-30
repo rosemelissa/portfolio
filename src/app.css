@@ -74,6 +74,10 @@ h2 {
   font-size: 50px;
 }
 
+h3.project-tagline {
+  text-align: center;
+}
+
 .project .nav-bar {
   display: flex;
   flex-direction: row;
