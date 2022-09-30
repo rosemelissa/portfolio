@@ -84,7 +84,7 @@ function P5Component({ setPage }: P5ComponentProps): JSX.Element {
       //Params: (color, directionVector)
       p.directionalLight(
         p.color(255, 255, 255),
-        p.createVector(-0.8, -0.5, -0.2)
+        p.createVector(0.8, -0.5, -0.2)
       );
       // p.push();
       // p.translate(0, 0, 0);
@@ -95,8 +95,8 @@ function P5Component({ setPage }: P5ComponentProps): JSX.Element {
       // // p.sphere(5);
       // p.pop();
       //Add a little light evenly to ALL surfaces.  Not too much or we'll see no shadow
-      p.ambientLight(180, 150, 150);
-      // p.ambientLight(255, 255, 255);
+      // p.ambientLight(180, 150, 150);
+      p.ambientLight(150, 150, 150);
       drawSelf(p, myPosition);
       moveSelf();
       drawTextBlocks(p, textBlocks);
