@@ -1,3 +1,5 @@
+import file from "./documents/Melissa Rose CV.pdf"
+
 interface IHome2DProps {
   setPage: React.Dispatch<
     React.SetStateAction<
@@ -63,8 +65,7 @@ function Home2D({ setPage }: IHome2DProps): JSX.Element {
             LinkedIn
         </p>
         <p className="fake-button"
-        onClick={() => window.open("https://melissa-todo-projects.netlify.app/")}>
-          
+        onClick={() => window.open(file)}>
             CV
         </p>
         <p className="fake-button" onClick={() => window.open("https://openprocessing.org/user/334099?view=sketches&o=40")}>
