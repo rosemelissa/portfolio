@@ -33,7 +33,7 @@ function drawPortal(
   p.fill("gray");
   p.torus(50, 5);
   p.rotateX(p.PI / 2);
-  console.log(Math.floor(p.frameCount / 60));
+  // console.log(Math.floor(p.frameCount / 60));
   for (let i = 49; i >= 5; i -= 5) {
     // console.log(palette[Math.floor(i/10)])
 

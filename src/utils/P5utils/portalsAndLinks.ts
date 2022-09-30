@@ -1,3 +1,5 @@
+import file from "../../documents/Melissa Rose CV.pdf"
+
 export const portals: {
   name: "todo-app" | "restaurant" | "playlist-converter" | "pokemon-top-trumps";
   x: number;
@@ -17,7 +19,7 @@ export const links: { name: string; url: string; x: number; z: number }[] = [
     x: 640,
     z: 400,
   },
-  { name: "CV", url: "../../documents/Melissa Rose CV.pdf", x: 530, z: 400 },
+  { name: "CV", url: file, x: 530, z: 400 },
   {
     name: "Creative Coding",
     url: "https://openprocessing.org/user/334099?view=sketches&o=40",
