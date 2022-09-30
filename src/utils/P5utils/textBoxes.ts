@@ -2,7 +2,7 @@ import { ITextBox } from "../../interfaces";
 
 export const textBoxes: ITextBox[] = [
   {
-    position: { x: 800, y: -80, z: -300, direction: 0 },
+    position: { x: 400, y: -80, z: -300, direction: 0 },
     color: { v1: 0, v2: 0, v3: 0 },
     message: "Todo list",
     textSize: 10,
@@ -12,7 +12,7 @@ export const textBoxes: ITextBox[] = [
     },
   },
   {
-    position: { x: 800, y: -80, z: -100, direction: 0 },
+    position: { x: 400, y: -80, z: -100, direction: 0 },
     color: { v1: 0, v2: 0, v3: 0 },
     message: "Restaurant booking system",
     textSize: 10,
@@ -22,7 +22,7 @@ export const textBoxes: ITextBox[] = [
     },
   },
   {
-    position: { x: 800, y: -80, z: 100, direction: 0 },
+    position: { x: 400, y: -80, z: 100, direction: 0 },
     color: { v1: 0, v2: 0, v3: 0 },
     message: "YouTube-to-Spotify playlist converter",
     textSize: 10,
@@ -32,7 +32,7 @@ export const textBoxes: ITextBox[] = [
     },
   },
   {
-    position: { x: 800, y: -80, z: 300, direction: 0 },
+    position: { x: 400, y: -80, z: 300, direction: 0 },
     color: { v1: 0, v2: 0, v3: 0 },
     message: "Pokemon Top Trumps",
     textSize: 10,
@@ -42,7 +42,7 @@ export const textBoxes: ITextBox[] = [
     },
   },
   {
-    position: { x: 750, y: -80, z: 400, direction: Math.PI / -2 },
+    position: { x: 300, y: -80, z: 400, direction: Math.PI / -2 },
     color: { v1: 0, v2: 0, v3: 0 },
     message: "GitHub",
     textSize: 10,
@@ -52,7 +52,7 @@ export const textBoxes: ITextBox[] = [
     },
   },
   {
-    position: { x: 640, y: -80, z: 400, direction: Math.PI / -2 },
+    position: { x: 190, y: -80, z: 400, direction: Math.PI / -2 },
     color: { v1: 0, v2: 0, v3: 0 },
     message: "LinkedIn",
     textSize: 10,
@@ -62,7 +62,7 @@ export const textBoxes: ITextBox[] = [
     },
   },
   {
-    position: { x: 530, y: -80, z: 400, direction: Math.PI / -2 },
+    position: { x: 80, y: -80, z: 400, direction: Math.PI / -2 },
     color: { v1: 0, v2: 0, v3: 0 },
     message: "CV",
     textSize: 10,
@@ -72,7 +72,7 @@ export const textBoxes: ITextBox[] = [
     },
   },
   {
-    position: { x: 420, y: -80, z: 400, direction: Math.PI / -2 },
+    position: { x: -30, y: -80, z: 400, direction: Math.PI / -2 },
     color: { v1: 0, v2: 0, v3: 0 },
     message: "Creative Coding",
     textSize: 10,
@@ -105,7 +105,7 @@ export const textBoxes: ITextBox[] = [
     position: {
       x: 300 * Math.sin(Math.PI / 4) - 300,
       y: -130,
-      z: -300 - 300 * Math.cos(Math.PI / 4),
+      z: -600 - 300 * Math.cos(Math.PI / 4),
       direction: (3 * Math.PI) / 4,
     },
     color: { v1: 0, v2: 0, v3: 0 },
@@ -120,7 +120,7 @@ export const textBoxes: ITextBox[] = [
     position: {
       x: 300 * Math.sin(Math.PI / 4) - 300,
       y: -80,
-      z: -300 - 300 * Math.cos(Math.PI / 4),
+      z: -600 - 300 * Math.cos(Math.PI / 4),
       direction: (3 * Math.PI) / 4,
     },
     color: { v1: 0, v2: 0, v3: 0 },
@@ -132,7 +132,7 @@ export const textBoxes: ITextBox[] = [
     },
   },
   {
-    position: { x: -300, y: -130, z: -600, direction: Math.PI },
+    position: { x: -300, y: -130, z: -1200, direction: Math.PI },
     color: { v1: 0, v2: 0, v3: 0 },
     message: "Tech skills",
     textSize: 30,
@@ -142,7 +142,7 @@ export const textBoxes: ITextBox[] = [
     },
   },
   {
-    position: { x: -300, y: -80, z: -600, direction: Math.PI },
+    position: { x: -300, y: -80, z: -1200, direction: Math.PI },
     color: { v1: 0, v2: 0, v3: 0 },
     message: "React, TypeScript, HTML, CSS",
     textSize: 15,
@@ -155,7 +155,7 @@ export const textBoxes: ITextBox[] = [
     position: {
       x: -(300 * Math.sin(Math.PI / 4)) - 300,
       y: -130,
-      z: -300 - 300 * Math.cos(Math.PI / 4),
+      z: -600 - 300 * Math.cos(Math.PI / 4),
       direction: (5 * Math.PI) / 4,
     },
     color: { v1: 0, v2: 0, v3: 0 },
@@ -170,7 +170,7 @@ export const textBoxes: ITextBox[] = [
     position: {
       x: -(300 * Math.sin(Math.PI / 4)) - 300,
       y: -80,
-      z: -300 - 300 * Math.cos(Math.PI / 4),
+      z: -600 - 300 * Math.cos(Math.PI / 4),
       direction: (5 * Math.PI) / 4,
     },
     color: { v1: 0, v2: 0, v3: 0 },
