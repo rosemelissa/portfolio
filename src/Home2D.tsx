@@ -1,3 +1,5 @@
+import file from "./documents/Melissa Rose CV.pdf";
+
 interface IHome2DProps {
   setPage: React.Dispatch<
     React.SetStateAction<
@@ -14,7 +16,10 @@ function Home2D({ setPage }: IHome2DProps): JSX.Element {
   return (
     <div id="home-2d">
       <h1>Hi, I'm Melissa</h1>
-      <p>I'm a software engineer using the PERN stack</p>
+      <p>
+        I'm a fullstack software engineer with an interest in WebDev, 3D
+        graphics, and tech for good.
+      </p>
       <h2>Projects</h2>
       <div className="home-2d-projects">
         <p
@@ -52,41 +57,32 @@ function Home2D({ setPage }: IHome2DProps): JSX.Element {
       </div>
       <h2>Links</h2>
       <div className="home-2d-links">
-        <p className="fake-button">
-          <a
-            href="https://github.com/rosemelissa"
-            rel="noreferrer"
-            target="_blank"
-          >
-            GitHub
-          </a>
+        <p
+          className="fake-button"
+          onClick={() => window.open("https://github.com/rosemelissa")}
+        >
+          GitHub
         </p>
-        <p className="fake-button">
-          <a
-            href="https://www.linkedin.com/in/melissa-rose123/"
-            rel="noreferrer"
-            target="_blank"
-          >
-            LinkedIn
-          </a>
+        <p
+          className="fake-button"
+          onClick={() =>
+            window.open("https://www.linkedin.com/in/melissa-rose123/")
+          }
+        >
+          LinkedIn
         </p>
-        <p className="fake-button">
-          <a
-            href="https://melissa-todo-projects.netlify.app/"
-            rel="noreferrer"
-            target="_blank"
-          >
-            CV
-          </a>
+        <p className="fake-button" onClick={() => window.open(file)}>
+          CV
         </p>
-        <p className="fake-button">
-          <a
-            href="https://openprocessing.org/user/334099?view=sketches&o=40"
-            rel="noreferrer"
-            target="_blank"
-          >
-            Creative Coding
-          </a>
+        <p
+          className="fake-button"
+          onClick={() =>
+            window.open(
+              "https://openprocessing.org/user/334099?view=sketches&o=40"
+            )
+          }
+        >
+          Creative Coding
         </p>
       </div>
     </div>

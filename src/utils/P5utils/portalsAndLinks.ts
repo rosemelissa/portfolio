@@ -17,7 +17,7 @@ export const links: { name: string; url: string; x: number; z: number }[] = [
     x: 640,
     z: 400,
   },
-  { name: "CV", url: "https://github.com/rosemelissa", x: 530, z: 400 },
+  { name: "CV", url: "../../documents/Melissa Rose CV.pdf", x: 530, z: 400 },
   {
     name: "Creative Coding",
     url: "https://openprocessing.org/user/334099?view=sketches&o=40",

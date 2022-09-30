@@ -21,7 +21,7 @@ function TodoApp({ mode, setPage }: ITodoAppProps): JSX.Element {
       <div className="project-main-content">
         <h3 className="project-tagline">
           Fullstack todo app built using: PostgreSQL, Express, Node.js, React,
-          HTML, and CSS
+          TypeScript, HTML, and CSS
         </h3>
         <div className="nav-bar">
           <p

@@ -21,7 +21,7 @@ function Restaurant({ mode, setPage }: IRestaurantProps): JSX.Element {
       <div className="project-main-content">
         <h3 className="project-tagline">
           Fullstack restaurant booking site built using: PostgreSQL, Express,
-          Nodemailer, Node.js, React, HTML, and CSS
+          Nodemailer, Node.js, React, TypeScript, HTML, and CSS
         </h3>
         <div className="nav-bar">
           <p

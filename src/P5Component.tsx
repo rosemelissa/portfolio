@@ -44,7 +44,7 @@ function P5Component({ setPage }: P5ComponentProps): JSX.Element {
     p.setup = function () {
       p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL);
       p.background(0);
-      p.debugMode(500, 10);
+      // p.debugMode(500, 10);
       myCamera = p.createCamera();
       moveCamera();
       instructions = p.createGraphics(200, 200);
