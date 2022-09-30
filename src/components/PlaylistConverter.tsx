@@ -26,7 +26,8 @@ function PlaylistConverter({
       </p>
       <div className="project-main-content">
         <h3 className="project-tagline">
-          Playlist converter built using: OAuth2.0, React, Node.js, TypeScript, HTML, CSS
+          Playlist converter built using: OAuth2.0, React, Node.js, TypeScript,
+          HTML, CSS
         </h3>
         <div className="nav-bar">
           <p
@@ -85,7 +86,10 @@ function PlaylistConverter({
         <ul>
           <li>Convert YouTube playlists into Spotify ones</li>
           <li>Personalize the playlist name, description, and image</li>
-          <li>Manually search for songs where the converter wasn't able to find a match</li>
+          <li>
+            Manually search for songs where the converter wasn't able to find a
+            match
+          </li>
         </ul>
       </div>
     </div>

@@ -102,7 +102,12 @@ export const textBoxes: ITextBox[] = [
     },
   },
   {
-    position: { x: (300*Math.sin(Math.PI/4)) -300, y: -130, z: -300 - (300*Math.cos(Math.PI/4)), direction: 3*Math.PI / 4 },
+    position: {
+      x: 300 * Math.sin(Math.PI / 4) - 300,
+      y: -130,
+      z: -300 - 300 * Math.cos(Math.PI / 4),
+      direction: (3 * Math.PI) / 4,
+    },
     color: { v1: 0, v2: 0, v3: 0 },
     message: "Tech skills",
     textSize: 30,
@@ -112,7 +117,12 @@ export const textBoxes: ITextBox[] = [
     },
   },
   {
-    position: { x: (300*Math.sin(Math.PI/4))-300, y: -80, z: -300 - (300*Math.cos(Math.PI/4)), direction: 3*Math.PI / 4 },
+    position: {
+      x: 300 * Math.sin(Math.PI / 4) - 300,
+      y: -80,
+      z: -300 - 300 * Math.cos(Math.PI / 4),
+      direction: (3 * Math.PI) / 4,
+    },
     color: { v1: 0, v2: 0, v3: 0 },
     message: "PostgreSQL, Express.js, Node.js, Git",
     textSize: 15,
@@ -142,7 +152,12 @@ export const textBoxes: ITextBox[] = [
     },
   },
   {
-    position: { x: -(300*Math.sin(Math.PI/4))-300, y: -130, z: -300 - (300*Math.cos(Math.PI/4)), direction: 5 * Math.PI / 4 },
+    position: {
+      x: -(300 * Math.sin(Math.PI / 4)) - 300,
+      y: -130,
+      z: -300 - 300 * Math.cos(Math.PI / 4),
+      direction: (5 * Math.PI) / 4,
+    },
     color: { v1: 0, v2: 0, v3: 0 },
     message: "Interests:",
     textSize: 30,
@@ -152,9 +167,14 @@ export const textBoxes: ITextBox[] = [
     },
   },
   {
-    position: { x: -(300*Math.sin(Math.PI/4))-300, y: -80, z: -300 - (300*Math.cos(Math.PI/4)), direction: 5 * Math.PI / 4 },
+    position: {
+      x: -(300 * Math.sin(Math.PI / 4)) - 300,
+      y: -80,
+      z: -300 - 300 * Math.cos(Math.PI / 4),
+      direction: (5 * Math.PI) / 4,
+    },
     color: { v1: 0, v2: 0, v3: 0 },
-    message: "WebDev | 3D graphics | AI/ML",
+    message: "WebDev | 3D graphics | tech for good",
     textSize: 15,
     plane: {
       width: 250,
@@ -162,7 +182,7 @@ export const textBoxes: ITextBox[] = [
     },
   },
   {
-    position: { x: -600, y: -130, z: -300, direction: 3*Math.PI/2 },
+    position: { x: -600, y: -130, z: -300, direction: (3 * Math.PI) / 2 },
     color: { v1: 0, v2: 0, v3: 0 },
     message: "Personal interests",
     textSize: 30,
@@ -172,7 +192,7 @@ export const textBoxes: ITextBox[] = [
     },
   },
   {
-    position: { x: -600, y: -80, z: -300, direction: 3*Math.PI/2 },
+    position: { x: -600, y: -80, z: -300, direction: (3 * Math.PI) / 2 },
     color: { v1: 0, v2: 0, v3: 0 },
     message: "Kpop | dance | art",
     textSize: 15,

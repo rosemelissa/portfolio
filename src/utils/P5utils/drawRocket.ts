@@ -19,14 +19,14 @@ export default function drawRocket(p: p5): void {
   p.fill("black");
   p.torus(2, 1);
 
-  p.rotateX(p.PI/2)
-	// rotateY(PI);
+  p.rotateX(p.PI / 2);
+  // rotateY(PI);
   p.translate(0, 0.5, 0);
-  p.fill('lightblue');
+  p.fill("lightblue");
   p.cylinder(2, 1);
   p.translate(0, -0.5, 0);
   // rotateY(PI)
-  p.rotateX(p.PI/-2)
+  p.rotateX(p.PI / -2);
 
   p.rotateY(p.PI / -2);
   p.translate(-4, 10, 0);
