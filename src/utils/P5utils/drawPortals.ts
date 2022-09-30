@@ -26,26 +26,23 @@ function drawPortal(
   // portal.background(138,43,226);
   // p.fill(200, 200, 200);
 
-  const palette = ['#541c54', '#ac58af', '#f96cf8', '#d887ec', '#92a0c4']
-		
-		
-		
-		p.push();
-    p.noStroke();
-	p.fill('gray');
-		p.torus(50, 5);
-	p.rotateX(p.PI/2);console.log(Math.floor(p.frameCount/60));
-	for (let i = 49; i >=5; i-=5) {
-		// console.log(palette[Math.floor(i/10)])
-		
-		p.fill(palette[(Math.floor(i/10)+Math.floor(p.frameCount/3))%5]);
-	// fill(138, 43, 226, 255-(5*i));
-	
-	p.cylinder(i, 5+(1/i));
-	}
-		p.pop();
-		
+  const palette = ["#541c54", "#ac58af", "#f96cf8", "#d887ec", "#92a0c4"];
 
+  p.push();
+  p.noStroke();
+  p.fill("gray");
+  p.torus(50, 5);
+  p.rotateX(p.PI / 2);
+  console.log(Math.floor(p.frameCount / 60));
+  for (let i = 49; i >= 5; i -= 5) {
+    // console.log(palette[Math.floor(i/10)])
+
+    p.fill(palette[(Math.floor(i / 10) + Math.floor(p.frameCount / 3)) % 5]);
+    // fill(138, 43, 226, 255-(5*i));
+
+    p.cylinder(i, 5 + 1 / i);
+  }
+  p.pop();
 
   // portal.fill(138, 43, 226);
   // portal.circle(50, 50, 100);
@@ -62,7 +59,6 @@ function drawPortal(
   // // portal.background(100);
   // p.texture(portal);
   // p.plane(100, 100, 2, 2);
-
 
   p.pop();
 }
