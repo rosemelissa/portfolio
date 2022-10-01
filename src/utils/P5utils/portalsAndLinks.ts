@@ -16,14 +16,14 @@ export const links: { name: string; url: string; x: number; z: number }[] = [
   {
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/melissa-rose123/",
-    x: 190,
+    x: 100,
     z: 400,
   },
-  { name: "CV", url: file, x: 80, z: 400 },
+  { name: "CV", url: file, x: -100, z: 400 },
   {
     name: "Creative Coding",
     url: "https://openprocessing.org/user/334099?view=sketches&o=40",
-    x: -30,
+    x: -300,
     z: 400,
   },
 ];

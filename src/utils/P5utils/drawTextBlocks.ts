@@ -17,8 +17,11 @@ function drawText(p: p5, textBlock: ITextBlock) {
   p.push();
   p.translate(x, y, z);
   p.rotateY(direction - (1 * p.PI) / 2);
-  p.fill(v1, v2, v3);
-  graphics.background(255);
+  p.stroke(v1, v2, v3);
+  graphics.stroke(255, 255, 255);
+  graphics.fill(255, 255, 255);
+  graphics.background(0);
+
   graphics.text(message, 0, 0, width, height);
   graphics.textAlign(p.CENTER, p.CENTER);
   p.texture(graphics);
