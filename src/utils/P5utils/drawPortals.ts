@@ -23,16 +23,27 @@ function drawPortal(
     p.rotateY(p.PI / -2);
   }
 
-  const palette = ["#541c54", "#ac58af", "#f96cf8", "#d887ec", "#92a0c4"];
+  const palette = [
+    "#a4508b",
+    "#933f8a",
+    "#822d89",
+    "#711c88",
+    "#681388",
+    "#5f0a87",
+    "#530879",
+    "#47066b",
+    "#3b035d",
+    "#2f004f",
+  ];
 
   p.push();
   p.noStroke();
   p.fill("gray");
   p.torus(50, 5);
   p.rotateX(p.PI / 2);
-  for (let i = 49; i >= 5; i -= 5) {
-    p.fill(palette[(Math.floor(i / 10) + Math.floor(p.frameCount / 3)) % 5]);
-    p.cylinder(i, 5 + 1 / i);
+  for (let i = 10; i >= 1; i--) {
+    p.fill(palette[(i - 1 + Math.floor(p.frameCount / 3)) % 10]);
+    p.cylinder(5 * i, 5 + 1 / i);
   }
   p.pop();
   p.pop();
