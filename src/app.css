@@ -2,10 +2,10 @@ body {
   background-color: black;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
-  
 }
 
-p,li {
+p,
+li {
   font-size: 18px;
 }
 
@@ -81,7 +81,7 @@ h2 {
 }
 
 h3 {
-  font-family: 'orbitron', sans-serif;
+  font-family: "orbitron", sans-serif;
 }
 
 h3.project-tagline {

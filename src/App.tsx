@@ -16,7 +16,9 @@ function App(): JSX.Element {
     | "playlist-converter"
     | "pokemon-top-trumps"
   >("home");
-  const [mode, setMode] = useState<"2D" | "3D">("3D");
+  const [mode, setMode] = useState<"2D" | "3D">(
+    window.innerWidth >= 600 ? "3D" : "2D"
+  );
   const [instructionsShow, setInstructionsShow] = useState<boolean>(true);
   return (
     <>
