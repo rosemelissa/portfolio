@@ -1,7 +1,12 @@
 body {
   background-color: black;
   color: white;
-  font-family: "Orbitron", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+p,li {
+  font-size: 18px;
 }
 
 #toggle-2d-3d {
@@ -20,6 +25,7 @@ a {
   margin-left: 5px;
   background-color: #054569;
   font-family: "Orbitron", sans-serif;
+  font-size: 16px;
 }
 
 .fake-button:hover {
@@ -72,6 +78,10 @@ h1 {
 
 h2 {
   font-size: 50px;
+}
+
+h3 {
+  font-family: 'orbitron', sans-serif;
 }
 
 h3.project-tagline {
