@@ -182,7 +182,7 @@ export const textBoxes: ITextBox[] = [
     },
   },
   {
-    position: { x: -600, y: -130, z: -600, direction: (3 * Math.PI) / 2 },
+    position: { x: -750, y: -130, z: -600, direction: (3 * Math.PI) / 2 },
     color: { v1: 0, v2: 0, v3: 0 },
     message: "Personal interests",
     textSize: 30,
@@ -192,7 +192,7 @@ export const textBoxes: ITextBox[] = [
     },
   },
   {
-    position: { x: -600, y: -80, z: -600, direction: (3 * Math.PI) / 2 },
+    position: { x: -750, y: -80, z: -600, direction: (3 * Math.PI) / 2 },
     color: { v1: 0, v2: 0, v3: 0 },
     message: "Kpop | dance | art",
     textSize: 15,
