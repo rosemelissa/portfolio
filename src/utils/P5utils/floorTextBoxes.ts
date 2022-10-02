@@ -4,8 +4,8 @@ export const floorTextBoxes: ITextBox[] = [
   {
     position: { x: 400, y: 100, z: -200, direction: 0 },
     color: { v1: 0, v2: 0, v3: 0 },
-    message: "<-- About me",
     textSize: 30,
+    message: "← About me",
     plane: {
       width: 200,
       height: 50,
@@ -14,7 +14,7 @@ export const floorTextBoxes: ITextBox[] = [
   {
     position: { x: 400, y: 100, z: 0, direction: 0 },
     color: { v1: 0, v2: 0, v3: 0 },
-    message: "^ Projects ^",
+    message: "↑ Projects ↑",
     textSize: 30,
     plane: {
       width: 180,
@@ -24,7 +24,7 @@ export const floorTextBoxes: ITextBox[] = [
   {
     position: { x: 400, y: 100, z: 200, direction: 0 },
     color: { v1: 0, v2: 0, v3: 0 },
-    message: "Links -->",
+    message: "Links →",
     textSize: 30,
     plane: {
       width: 200,

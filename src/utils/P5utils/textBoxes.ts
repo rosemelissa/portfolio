@@ -132,7 +132,7 @@ export const textBoxes: ITextBox[] = [
     },
   },
   {
-    position: { x: -300, y: -130, z: -1500, direction: Math.PI },
+    position: { x: -300, y: -130, z: -1200, direction: Math.PI },
     color: { v1: 0, v2: 0, v3: 0 },
     message: "Tech skills",
     textSize: 30,
@@ -142,7 +142,7 @@ export const textBoxes: ITextBox[] = [
     },
   },
   {
-    position: { x: -300, y: -80, z: -1500, direction: Math.PI },
+    position: { x: -300, y: -80, z: -1200, direction: Math.PI },
     color: { v1: 0, v2: 0, v3: 0 },
     message: "React, TypeScript, HTML, CSS",
     textSize: 15,

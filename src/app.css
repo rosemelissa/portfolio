@@ -45,6 +45,78 @@ a {
   border-radius: 10px;
 }
 
+.instructions-panel {
+  display: grid;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  grid-template-columns: 25px 25px 25px 170px;
+  grid-template-rows: 25px 25px 5px 40px;
+  grid-template-areas:
+    ". up-arrow . move-rocket"
+    "left-arrow down-arrow right-arrow move-rocket"
+    ". . . . "
+    "move-camera move-camera move-camera move-camera";
+  padding: 20px 30px;
+  margin-right: 5px;
+  margin-left: 5px;
+  background-color: #054569;
+  font-family: "Orbitron", sans-serif;
+  font-size: 16px;
+}
+
+#up-arrow {
+  margin: 0px;
+  place-self: center;
+  grid-area: up-arrow;
+  height: 23px;
+  width: 23px;
+  text-align: center;
+  background-color: #5591a9;
+}
+
+#left-arrow {
+  margin: 0px;
+  place-self: center;
+  grid-area: left-arrow;
+  height: 23px;
+  width: 23px;
+  text-align: center;
+  background-color: #5591a9;
+}
+
+#down-arrow {
+  margin: 0px;
+  place-self: center;
+  grid-area: down-arrow;
+  height: 23px;
+  width: 23px;
+  text-align: center;
+  background-color: #5591a9;
+}
+
+#right-arrow {
+  margin: 0px;
+  place-self: center;
+  grid-area: right-arrow;
+  height: 23px;
+  width: 23px;
+  text-align: center;
+  background-color: #5591a9;
+}
+
+#move-rocket {
+  margin: 0px;
+  place-self: center;
+  grid-area: move-rocket;
+}
+
+#move-camera {
+  margin: 0px;
+  place-self: center;
+  grid-area: move-camera;
+}
+
 .P5Component {
   display: flex;
   height: 97vh;

@@ -7,6 +7,7 @@ import Home2D from "./Home2D";
 import P5Component from "./P5Component";
 import "./app.css";
 import Instructions3D from "./components/Instructions3D";
+import InstructionsPanel from "./components/InstructionsPanel";
 
 function App(): JSX.Element {
   const [page, setPage] = useState<
@@ -33,7 +34,12 @@ function App(): JSX.Element {
           Toggle 2D/3D
         </p>
       )}
-      {page === "home" && mode === "3D" && <P5Component setPage={setPage} />}
+      {page === "home" && mode === "3D" && (
+        <>
+          <P5Component setPage={setPage} />
+          <InstructionsPanel />
+        </>
+      )}
       {page === "home" && mode === "3D" && instructionsShow && (
         <Instructions3D setInstructionsShow={setInstructionsShow} />
       )}
