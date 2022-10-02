@@ -55,7 +55,7 @@ function PlaylistConverter({
             that only users manually whitelisted by me can use it. Until the app
             gains approval from Spotify to be shipped to general audiences, feel
             free to message me if you would like me to whitelist your Spotify
-            account. Alterntaively, feel free to use the log-in details below:{" "}
+            account. Alternatively, feel free to use the log-in details below:{" "}
           </p>
         </div>
         <p
