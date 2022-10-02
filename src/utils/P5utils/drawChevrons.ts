@@ -13,7 +13,7 @@ const chevronArray: { x: number; z: number; direction: number }[] = [
     z: -900 - 300 * Math.cos(Math.PI / 4),
     direction: (5 * Math.PI) / 4,
   },
-  { x: -600, z: -600, direction: (3 * Math.PI) / 2 },
+  { x: -750, z: -600, direction: (3 * Math.PI) / 2 },
 ];
 
 export default function drawChevrons(p: p5): void {
