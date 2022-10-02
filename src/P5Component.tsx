@@ -55,13 +55,13 @@ function P5Component({ setPage }: P5ComponentProps): JSX.Element {
         });
       }
       for (let i = 0; i < 100; i++) {
-        let x = p.random(-1000, 1000);
-        let y = p.random(-1000, 1000);
-        let z = p.random(-1000, 1000);
+        let x = p.random(-2000, 2000);
+        let y = p.random(-2000, 2000);
+        let z = p.random(-2000, 2000);
         while (x * x + y * y + z * z < 1000000) {
-          x = p.random(-1000, 1000);
-          y = p.random(-1000, 1000);
-          z = p.random(-1000, 1000);
+          x = p.random(-2000, 2000);
+          y = p.random(-2000, 2000);
+          z = p.random(-2000, 2000);
         }
         stars.push({ x, y, z });
       }
