@@ -52,10 +52,11 @@ a {
   bottom: 10px;
   grid-template-columns: 25px 25px 25px 170px;
   grid-template-rows: 25px 25px 5px 40px;
-  grid-template-areas: '. up-arrow . move-rocket'
-  'left-arrow down-arrow right-arrow move-rocket'
-  '. . . . '
-  'move-camera move-camera move-camera move-camera';
+  grid-template-areas:
+    ". up-arrow . move-rocket"
+    "left-arrow down-arrow right-arrow move-rocket"
+    ". . . . "
+    "move-camera move-camera move-camera move-camera";
   padding: 20px 30px;
   margin-right: 5px;
   margin-left: 5px;

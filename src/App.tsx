@@ -34,10 +34,12 @@ function App(): JSX.Element {
           Toggle 2D/3D
         </p>
       )}
-      {page === "home" && mode === "3D" && <>
-      <P5Component setPage={setPage} />
-      <InstructionsPanel/ >
-      </>}
+      {page === "home" && mode === "3D" && (
+        <>
+          <P5Component setPage={setPage} />
+          <InstructionsPanel />
+        </>
+      )}
       {page === "home" && mode === "3D" && instructionsShow && (
         <Instructions3D setInstructionsShow={setInstructionsShow} />
       )}
