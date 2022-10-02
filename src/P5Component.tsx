@@ -9,6 +9,7 @@ import drawTextBlocks from "./utils/P5utils/drawTextBlocks";
 import { floorTextBoxes } from "./utils/P5utils/floorTextBoxes";
 import drawFloorTextBlocks from "./utils/P5utils/drawFloorTextBlocks";
 import drawStars from "./utils/P5utils/drawStars";
+import drawChevrons from "./utils/P5utils/drawChevrons";
 
 let myCamera: p5.Camera;
 const myPosition: IPosition = { x: 0, y: 0, z: 0, direction: 0 };
@@ -81,6 +82,7 @@ function P5Component({ setPage }: P5ComponentProps): JSX.Element {
       drawPortals(p, portal);
       checkForRedirects();
       drawStars(p, stars);
+      drawChevrons(p);
     };
 
     function checkForRedirects() {
