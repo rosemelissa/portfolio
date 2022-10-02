@@ -22,31 +22,31 @@ export default function drawChevrons(p: p5): void {
     p.stroke("white");
     p.translate(chevron.x, 100, chevron.z);
     p.rotateY(chevron.direction);
-    p.sphere((Math.floor(p.frameCount/6) % 10) / 9 + 1);
+    p.sphere((Math.floor(p.frameCount / 6) % 10) / 9 + 1);
 
     for (let i = 1; i <= 5; i++) {
       p.translate(-5, 0, -5 * i);
-      p.sphere(((Math.floor(p.frameCount/6)+i)%10)/10 + 1);
+      p.sphere(((Math.floor(p.frameCount / 6) + i) % 10) / 10 + 1);
       p.translate(0, 0, 10 * i);
-      p.sphere(((Math.floor(p.frameCount/6)+i)%10)/10 + 1);
+      p.sphere(((Math.floor(p.frameCount / 6) + i) % 10) / 10 + 1);
       p.translate(0, 0, -5 * i);
     }
     p.translate(-75, 0, 0);
-    p.sphere((Math.floor(p.frameCount/6) % 10) / 9 + 1);
+    p.sphere((Math.floor(p.frameCount / 6) % 10) / 9 + 1);
     for (let i = 1; i <= 5; i++) {
       p.translate(-5, 0, -5 * i);
-      p.sphere(((Math.floor(p.frameCount/6)+i)%10)/10 + 1);
+      p.sphere(((Math.floor(p.frameCount / 6) + i) % 10) / 10 + 1);
       p.translate(0, 0, 10 * i);
-      p.sphere(((Math.floor(p.frameCount/6)+i)%10)/10 + 1);
+      p.sphere(((Math.floor(p.frameCount / 6) + i) % 10) / 10 + 1);
       p.translate(0, 0, -5 * i);
     }
     p.translate(225, 0, 0);
-    p.sphere((Math.floor(p.frameCount/6) % 10) / 9 + 1);
+    p.sphere((Math.floor(p.frameCount / 6) % 10) / 9 + 1);
     for (let i = 1; i <= 5; i++) {
       p.translate(-5, 0, -5 * i);
-      p.sphere(((Math.floor(p.frameCount/6)+i)%10)/10 + 1);
+      p.sphere(((Math.floor(p.frameCount / 6) + i) % 10) / 10 + 1);
       p.translate(0, 0, 10 * i);
-      p.sphere(((Math.floor(p.frameCount/6)+i)%10)/10 + 1);
+      p.sphere(((Math.floor(p.frameCount / 6) + i) % 10) / 10 + 1);
       p.translate(0, 0, -5 * i);
     }
     p.pop();
